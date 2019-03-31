@@ -1,8 +1,12 @@
 {
-  "name": "portfolio-site",
+  "name": "adamrisberg.com",
+  "description": "Adam's portfolio website",
+  "author": "Adam Risberg <myniztan@hotmail.com> (https://www.adamrisberg.com)",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "emotion": "^10.0.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
