@@ -1,5 +1,9 @@
 import * as serviceWorker from "./serviceWorker";
-import React, { Component } from "react";
+import "es6-promise/auto";
+import "es6-object-assign/auto";
+import smoothscroll from "smoothscroll-polyfill";
+
+import React from "react";
 import ReactDOM from "react-dom";
 import { injectGlobal } from "emotion";
 
@@ -10,6 +14,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
 import { breakpoints } from "./data";
+
+smoothscroll.polyfill();
 
 injectGlobal`
   * {
@@ -59,44 +65,35 @@ injectGlobal`
   }
 `;
 
-class App extends Component {
-  state = {
-    navOpen: false
-  };
+function App() {
+  const [ navOpen, setNavOpen ] = React.useState(false);
 
-  projectSectionRef = React.createRef();
-  aboutSectionRef = React.createRef();
-  contactSectionRef = React.createRef();
+  const projectSectionRef = React.useRef();
+  const aboutSectionRef = React.useRef();
+  const contactSectionRef = React.useRef();
 
-  openNav = () => {
-    this.setState({ navOpen: true });
-  };
+  const openNav = () => setNavOpen(true);
+  const closeNav = () => setNavOpen(false);
 
-  closeNav = () => {
-    this.setState({ navOpen: false });
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <Header
-          showHeroImage
-          openNav={this.openNav}
-          showHamburger={!this.state.navOpen}
-          sectionRefs={{
-            projects: this.projectSectionRef,
-            about: this.aboutSectionRef,
-            contact: this.contactSectionRef
-          }}
-        />
-        <Projects sectionRef={this.projectSectionRef} />
-        <About sectionRef={this.aboutSectionRef} />
-        <Contact sectionRef={this.contactSectionRef} />
-        <Footer />
-        <MobileNav open={this.state.navOpen} closeNav={this.closeNav} />
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <Header
+        showHeroImage
+        openNav={openNav}
+        showHamburger={!navOpen}
+        sectionRefs={{
+          projects: projectSectionRef,
+          about: aboutSectionRef,
+          contact: contactSectionRef
+        }}
+      />
+      <Projects sectionRef={projectSectionRef} />
+      <About sectionRef={aboutSectionRef} />
+      <Contact sectionRef={contactSectionRef} />
+      <Footer />
+      <MobileNav open={navOpen} closeNav={closeNav} />
+    </React.Fragment>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
