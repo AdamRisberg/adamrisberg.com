@@ -36,9 +36,9 @@ const lastCardStyle = css`
   }
 `;
 
-function About() {
+function About({ sectionRef }) {
   return (
-    <Section>
+    <Section sectionRef={sectionRef} id="about">
       <SectionTitle text="ABOUT" />
       <div
         className={css`

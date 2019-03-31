@@ -4,15 +4,21 @@ import { css } from "emotion";
 import MainNav from "./MainNav";
 import HeroImage from "./HeroImage";
 
-function Header({ showHeroImage, openNav, showHamburger }) {
+function Header({ showHeroImage, openNav, showHamburger, sectionRefs }) {
   return (
     <header
       className={css`
         margin-bottom: 60px;
       `}
     >
-      <MainNav openNav={openNav} showHamburger={showHamburger} />
-      {showHeroImage && <HeroImage image="images/ice.jpg" />}
+      <MainNav
+        sectionRefs={sectionRefs}
+        openNav={openNav}
+        showHamburger={showHamburger}
+      />
+      {showHeroImage && (
+        <HeroImage sectionRefs={sectionRefs} image="images/ice.jpg" />
+      )}
     </header>
   );
 }

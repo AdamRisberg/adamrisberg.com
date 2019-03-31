@@ -70,6 +70,18 @@ export const projects = [
         href: "https://github.com/myniztan/react-input-position"
       }
     ]
+  },
+  {
+    title: "PORTFOLIO SITE",
+    type: "Personal Project",
+    tech: "React | Emotion",
+    image: "images/Portfolio.jpg",
+    links: [
+      {
+        title: "Github",
+        href: "https://github.com/myniztan/adamrisberg.com"
+      }
+    ]
   }
 ];
 

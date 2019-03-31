@@ -8,9 +8,9 @@ import ContactInfo from "./ContactInfo";
 
 import { breakpoints } from "../data";
 
-function Contact() {
+function Contact({ sectionRef }) {
   return (
-    <Section>
+    <Section sectionRef={sectionRef} id="contact">
       <SectionTitle text="CONTACT" />
       <div
         className={css`

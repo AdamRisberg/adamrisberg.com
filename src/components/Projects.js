@@ -7,9 +7,9 @@ import SectionTitle from "./SectionTitle";
 
 import { projects, breakpoints } from "../data";
 
-function Projects() {
+function Projects({ sectionRef }) {
   return (
-    <Section>
+    <Section sectionRef={sectionRef} id="projects">
       <SectionTitle text="PROJECTS" />
       <div
         className={css`

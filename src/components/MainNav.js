@@ -13,7 +13,13 @@ const anchorStyle = css`
   display: inline-block;
 `;
 
-function MainNav({ openNav, showHamburger }) {
+function MainNav({ openNav, showHamburger, sectionRefs }) {
+  const handleLinkClick = section => e => {
+    e.preventDefault();
+    const targetY = sectionRefs[section].current.getBoundingClientRect().top;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  };
+
   return (
     <nav
       className={css`
@@ -36,17 +42,29 @@ function MainNav({ openNav, showHamburger }) {
         `}
       >
         <li className={liStyle}>
-          <a className={anchorStyle} href="#projects">
+          <a
+            onClick={handleLinkClick("projects")}
+            className={anchorStyle}
+            href="#projects"
+          >
             PROJECTS
           </a>
         </li>
         <li className={liStyle}>
-          <a className={anchorStyle} href="#about">
+          <a
+            onClick={handleLinkClick("about")}
+            className={anchorStyle}
+            href="#about"
+          >
             ABOUT
           </a>
         </li>
         <li className={liStyle}>
-          <a className={anchorStyle} href="#contact">
+          <a
+            onClick={handleLinkClick("contact")}
+            className={anchorStyle}
+            href="#contact"
+          >
             CONTACT
           </a>
         </li>

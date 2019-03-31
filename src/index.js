@@ -1,4 +1,4 @@
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from "./serviceWorker";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { injectGlobal } from "emotion";
@@ -64,6 +64,10 @@ class App extends Component {
     navOpen: false
   };
 
+  projectSectionRef = React.createRef();
+  aboutSectionRef = React.createRef();
+  contactSectionRef = React.createRef();
+
   openNav = () => {
     this.setState({ navOpen: true });
   };
@@ -79,10 +83,15 @@ class App extends Component {
           showHeroImage
           openNav={this.openNav}
           showHamburger={!this.state.navOpen}
+          sectionRefs={{
+            projects: this.projectSectionRef,
+            about: this.aboutSectionRef,
+            contact: this.contactSectionRef
+          }}
         />
-        <Projects />
-        <About />
-        <Contact />
+        <Projects sectionRef={this.projectSectionRef} />
+        <About sectionRef={this.aboutSectionRef} />
+        <Contact sectionRef={this.contactSectionRef} />
         <Footer />
         <MobileNav open={this.state.navOpen} closeNav={this.closeNav} />
       </React.Fragment>

@@ -3,7 +3,25 @@ import { css } from "emotion";
 
 import { breakpoints } from "../data";
 
-function HeroImage({ image }) {
+function HeroImage({ image, sectionRefs }) {
+  const handleLinkClick = e => {
+    e.preventDefault();
+    const targetY = sectionRefs.projects.current.getBoundingClientRect().top;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  };
+
+  const [ loaded, setLoaded ] = React.useState(false);
+  const firstRun = React.useRef(true);
+
+  if(firstRun.current) {
+    firstRun.current = false;
+    const loadingImage = new Image();
+    loadingImage.onload = () => {
+      setLoaded(true);
+    };
+    loadingImage.src = image;
+  }
+
   return (
     <div
       className={css`
@@ -15,6 +33,7 @@ function HeroImage({ image }) {
         flex-grow: 1;
         border-bottom: 2px solid #27333f;
         border-top: 2px solid #27333f;
+        opacity: ${loaded ? "1" : "0"};
         transition: opacity 1s;
         background-image: url(${image});
 
@@ -86,6 +105,7 @@ function HeroImage({ image }) {
             Fullstack Web Developer
           </h2>
           <a
+            onClick={handleLinkClick}
             href="#projects"
             className={css`
               display: inline-block;
