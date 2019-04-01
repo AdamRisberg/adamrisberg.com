@@ -1,11 +1,15 @@
 import React from "react";
 import { css } from "emotion";
 
+import { useInView } from "../utils";
+
 const listCardStyle = css`
   margin-bottom: 40px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  transform-origin: 0 0;
+  transition: transform 1s;
 `;
 
 const titleStyle = css`
@@ -17,12 +21,16 @@ const titleStyle = css`
   margin-bottom: 0;
 `;
 
-export function ListCard({ title, list = [], cardStyle = "" }) {
+export function ListCard({ title, list = [] }) {
+  const ref = React.useRef();
+  const show = useInView(ref, 100);
+
   return (
     <div
+      ref={ref}
       className={css`
         ${listCardStyle}
-        ${cardStyle}
+        transform: scaleY(${show ? "1" : "0"});
       `}
     >
       <h4 className={titleStyle}>{title}</h4>
@@ -49,8 +57,17 @@ export function ListCard({ title, list = [], cardStyle = "" }) {
 }
 
 export function TextCard({ title, paragraphs = [] }) {
+  const ref = React.useRef();
+  const show = useInView(ref, 100);
+
   return (
-    <div className={listCardStyle}>
+    <div
+      ref={ref}
+      className={css`
+        ${listCardStyle}
+        transform: scaleY(${show ? "1" : "0"});
+      `}
+    >
       <h4 className={titleStyle}>{title}</h4>
       <div
         className={css`

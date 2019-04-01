@@ -9,7 +9,7 @@ import { projects, breakpoints } from "../data";
 import { useInView } from "../utils";
 
 function Projects({ sectionRef }) {
-  const show = useInView(sectionRef, 100);
+  const show = useInView(sectionRef, 200);
 
   return (
     <Section sectionRef={sectionRef} id="projects">

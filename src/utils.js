@@ -3,13 +3,14 @@ import throttle from "lodash.throttle";
 
 export function useInView(ref, offset) {
   const [inView, setInView] = React.useState(false);
-
+  const doneRef = React.useRef(false);
+  
   React.useEffect(() => {
-    checkInView(ref.current, offset, setInView);
+    checkInView(ref.current, offset, setInView, doneRef);
 
     const handleScroll = throttle(() => {
-      if (inView) return;
-      checkInView(ref.current, offset, setInView);
+      if (doneRef.current) return;
+      checkInView(ref.current, offset, setInView, doneRef);
     }, 100);
 
     window.addEventListener("scroll", handleScroll);
@@ -20,12 +21,13 @@ export function useInView(ref, offset) {
   return inView;
 }
 
-function checkInView(el, offset, cb) {
+function checkInView(el, offset, cb, doneRef) {
   const scrollY = window.scrollY || window.pageYOffset;
   const viewBottom = scrollY + window.innerHeight;
   const elementTop = el.offsetTop + offset;
 
   if (elementTop <= viewBottom) {
+    doneRef.current = true;
     cb(true);
   }
 }

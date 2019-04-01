@@ -7,8 +7,11 @@ import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 
 import { breakpoints } from "../data";
+import { useInView } from "../utils";
 
 function Contact({ sectionRef }) {
+  const show = useInView(sectionRef, 200);
+
   return (
     <Section sectionRef={sectionRef} id="contact">
       <SectionTitle text="CONTACT" />
@@ -22,6 +25,9 @@ function Contact({ sectionRef }) {
           className={css`
             width: 50%;
             padding-right: 4%;
+            transition: transform 1s, opacity 1s;
+            opacity: ${show ? "1" : "0"};
+            transform: translateY(${show ? "0" : "200px"});
             @media (max-width: ${breakpoints.medium}) {
               width: 100%;
               padding: 0;
@@ -35,6 +41,9 @@ function Contact({ sectionRef }) {
           className={css`
             width: 50%;
             padding-left: 4%;
+            transition: transform 1s .2s, opacity 1s .2s;
+            opacity: ${show ? "1" : "0"};
+            transform: translateY(${show ? "0" : "200px"});
             padding-top: calc(1rem + 4px);
             @media (max-width: ${breakpoints.medium}) {
               width: 100%;

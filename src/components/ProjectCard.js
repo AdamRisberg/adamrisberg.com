@@ -50,7 +50,7 @@ const cardStyle = css`
 
   &:hover [data-project-content] {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
   }
 
   &:hover [data-project-content] div:nth-of-type(1) {
