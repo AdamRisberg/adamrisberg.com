@@ -6,8 +6,11 @@ import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
 import { projects, breakpoints } from "../data";
+import { useInView } from "../utils";
 
 function Projects({ sectionRef }) {
+  const show = useInView(sectionRef, 100);
+
   return (
     <Section sectionRef={sectionRef} id="projects">
       <SectionTitle text="PROJECTS" />
@@ -18,13 +21,17 @@ function Projects({ sectionRef }) {
           margin: 0 -10px -40px -10px;
         `}
       >
-        {projects.map(project => (
+        {projects.map((project, i) => (
           <div
             key={`project-${project.title}`}
             className={css`
               width: 33.333%;
               padding: 0 10px;
               margin-bottom: 40px;
+
+              transition: opacity 1s ${i / 5}s, transform 1s ${i / 5}s;
+              opacity: ${show ? "1" : "0"};
+              transform: translateY(${show ? "0" : "200px"});
 
               @media (max-width: ${breakpoints.medium}) {
                 width: 50%;
