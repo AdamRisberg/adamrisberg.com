@@ -2,6 +2,7 @@ import React from "react";
 import { HamburgerIcon, LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
 import { css } from "emotion";
 import { breakpoints } from "../data";
+import { handleLinkClick } from "../utils";
 
 const liStyle = css`
   display: inline-block;
@@ -14,12 +15,6 @@ const anchorStyle = css`
 `;
 
 function MainNav({ openNav, showHamburger, sectionRefs }) {
-  const handleLinkClick = section => e => {
-    e.preventDefault();
-    const targetY = sectionRefs[section].current.getBoundingClientRect().top;
-    window.scrollTo({ top: targetY, behavior: "smooth" });
-  };
-
   return (
     <nav
       className={css`
@@ -43,7 +38,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
       >
         <li className={liStyle}>
           <a
-            onClick={handleLinkClick("projects")}
+            onClick={handleLinkClick(sectionRefs.projects)}
             className={anchorStyle}
             href="#projects"
           >
@@ -52,7 +47,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
         </li>
         <li className={liStyle}>
           <a
-            onClick={handleLinkClick("about")}
+            onClick={handleLinkClick(sectionRefs.about)}
             className={anchorStyle}
             href="#about"
           >
@@ -61,7 +56,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
         </li>
         <li className={liStyle}>
           <a
-            onClick={handleLinkClick("contact")}
+            onClick={handleLinkClick(sectionRefs.contact)}
             className={anchorStyle}
             href="#contact"
           >

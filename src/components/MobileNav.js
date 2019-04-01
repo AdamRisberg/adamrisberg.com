@@ -2,6 +2,8 @@ import React from "react";
 import { LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
 import { css } from "emotion";
 
+import { handleLinkClick } from "../utils";
+
 const liStyle = css`
   list-style: none;
   margin: 0;
@@ -12,7 +14,7 @@ const liStyle = css`
   transform: translateY(-1200px);
 `;
 
-function MobileNav({ open, closeNav }) {
+function MobileNav({ open, closeNav, sectionRefs }) {
   return (
     <nav
       className={css`
@@ -71,13 +73,13 @@ function MobileNav({ open, closeNav }) {
           `}
         >
           <li className={liStyle}>
-            <a href="#projects">PROJECTS</a>
+            <a onClick={handleLinkClick(sectionRefs.projects, closeNav)} href="#projects">PROJECTS</a>
           </li>
           <li className={liStyle}>
-            <a href="#about">ABOUT</a>
+            <a onClick={handleLinkClick(sectionRefs.about, closeNav)} href="#about">ABOUT</a>
           </li>
           <li className={liStyle}>
-            <a href="#contact">CONTACT</a>
+            <a onClick={handleLinkClick(sectionRefs.contact, closeNav)} href="#contact">CONTACT</a>
           </li>
         </ul>
         <div

@@ -2,18 +2,13 @@ import React from "react";
 import { css } from "emotion";
 
 import { breakpoints } from "../data";
+import { handleLinkClick } from "../utils";
 
 function HeroImage({ image, sectionRefs }) {
-  const handleLinkClick = e => {
-    e.preventDefault();
-    const targetY = sectionRefs.projects.current.getBoundingClientRect().top;
-    window.scrollTo({ top: targetY, behavior: "smooth" });
-  };
-
-  const [ loaded, setLoaded ] = React.useState(false);
+  const [loaded, setLoaded] = React.useState(false);
   const firstRun = React.useRef(true);
 
-  if(firstRun.current) {
+  if (firstRun.current) {
     firstRun.current = false;
     const loadingImage = new Image();
     loadingImage.onload = () => {
@@ -105,7 +100,7 @@ function HeroImage({ image, sectionRefs }) {
             Fullstack Web Developer
           </h2>
           <a
-            onClick={handleLinkClick}
+            onClick={handleLinkClick(sectionRefs.projects)}
             href="#projects"
             className={css`
               display: inline-block;

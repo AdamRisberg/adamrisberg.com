@@ -29,3 +29,12 @@ function checkInView(el, offset, cb) {
     cb(true);
   }
 }
+
+export function handleLinkClick(ref, cb) {
+  return e => {
+    e.preventDefault();
+    const targetY = ref.current.getBoundingClientRect().top;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+    cb && cb();
+  };
+}

@@ -91,7 +91,15 @@ function App() {
       <About sectionRef={aboutSectionRef} />
       <Contact sectionRef={contactSectionRef} />
       <Footer />
-      <MobileNav open={navOpen} closeNav={closeNav} />
+      <MobileNav
+        open={navOpen}
+        closeNav={closeNav}
+        sectionRefs={{
+          projects: projectSectionRef,
+          about: aboutSectionRef,
+          contact: contactSectionRef
+        }}
+      />
     </React.Fragment>
   );
 }
