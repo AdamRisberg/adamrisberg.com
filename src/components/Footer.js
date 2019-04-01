@@ -18,7 +18,7 @@ function Footer() {
           padding: 6px 30px;
         `}
       >
-        Copyright © 2019 Adam Risberg
+        Adam Risberg © 2019
       </div>
     </footer>
   );
