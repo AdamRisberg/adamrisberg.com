@@ -89,7 +89,7 @@ function MobileNav({ open, closeNav, sectionRefs }) {
             transition: transform 0.3s 0.2s;
 
             & a {
-              margin: 0 10px;
+              margin: 0 12px;
             }
           `}
         >

@@ -6,7 +6,7 @@ import { handleLinkClick } from "../utils";
 
 const liStyle = css`
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 24px;
   cursor: pointer;
 `;
 
@@ -67,7 +67,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
       <div
         className={css`
           & a {
-            margin-left: 15px;
+            margin-left: 20px;
           }
           @media (max-width: ${breakpoints.medium}) {
             display: none;
