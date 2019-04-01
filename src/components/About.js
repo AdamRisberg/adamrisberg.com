@@ -67,6 +67,9 @@ function About({ sectionRef }) {
             flex-wrap: wrap;
             padding: 0;
           }
+          @media (max-width: ${breakpoints.small}) {
+            padding: 0 10px;
+          }
         `}
         >
           <ListCard

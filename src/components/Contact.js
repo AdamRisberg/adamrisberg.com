@@ -33,6 +33,10 @@ function Contact({ sectionRef }) {
               padding: 0;
               order: 1;
             }
+            @media (max-width: ${breakpoints.small}) {
+              opacity: 1;
+              transform: translateY(0);
+            }
           `}
         >
           <ContactForm />
@@ -49,6 +53,10 @@ function Contact({ sectionRef }) {
               width: 100%;
               padding: 0;
               margin-bottom: 50px;
+            }
+            @media (max-width: ${breakpoints.small}) {
+              opacity: 1;
+              transform: translateY(0);
             }
           `}
         >

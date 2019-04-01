@@ -39,6 +39,8 @@ function Projects({ sectionRef }) {
 
               @media (max-width: ${breakpoints.small}) {
                 width: 100%;
+                opacity: 1;
+                transform: translateY(0);
               }
             `}
           >

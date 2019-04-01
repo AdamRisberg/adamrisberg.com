@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "emotion";
 
 import { useInView } from "../utils";
+import { breakpoints } from "../data";
 
 const listCardStyle = css`
   margin-bottom: 40px;
@@ -10,6 +11,10 @@ const listCardStyle = css`
   flex-direction: column;
   transform-origin: 0 0;
   transition: transform 1s;
+
+  @media (max-width: ${breakpoints.small}) {
+    transform: scaleY(1);
+  }
 `;
 
 const titleStyle = css`
