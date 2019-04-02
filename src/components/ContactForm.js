@@ -90,22 +90,13 @@ function useAxiosPost(url, body) {
 function ContactForm() {
   const [body, setBody] = React.useState("");
   const { sending, response, error } = useAxiosPost(
-    "https://usebasi.com/f/ddbe35ae8070.json",
+    "https://usebasin.com/f/ddbe35ae8070.json",
     body
   );
 
   function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(e.target);
-    if (data.get("agree-to-terms")) return;
-
-    setBody(
-      JSON.stringify({
-        name: data.get("name"),
-        email: data.get("email"),
-        message: data.get("message")
-      })
-    );
+    setBody(JSON.stringify(getFormData(e.target)));
   }
 
   return (
@@ -145,14 +136,6 @@ function ContactForm() {
           required
         />
       </label>
-      <input
-        style={{ display: "none" }}
-        id="agree-to-terms"
-        tabIndex="-1"
-        autoComplete="off"
-        type="checkbox"
-        name="agree-to-terms"
-      />
       {response && (
         <div
           className={css`
@@ -171,6 +154,17 @@ function ContactForm() {
       </button>
     </form>
   );
+}
+
+function getFormData(formNode) {
+  return Object.getOwnPropertyNames(formNode.elements).reduce((obj, key) => {
+    const formControl = formNode.elements[key];
+    const name = formControl.getAttribute("name");
+    if (name && !obj[name]) {
+      obj[name] = formControl.value;
+    }
+    return obj;
+  }, {});
 }
 
 export default ContactForm;
