@@ -2,6 +2,7 @@ import React from "react";
 import { LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
 import { css } from "emotion";
 
+import { colors } from "../theme";
 import { handleLinkClick } from "../utils";
 
 const liStyle = css`
@@ -23,7 +24,7 @@ function MobileNav({ open, closeNav, sectionRefs }) {
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: #151922;
+        background-color: ${colors.background};
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -41,7 +42,7 @@ function MobileNav({ open, closeNav, sectionRefs }) {
           margin-right: 20px;
           transition: color 0.2s;
           &:hover {
-            color: rgba(181, 210, 234, 1);
+            color: ${colors.secondary};
           }
         `}
         onClick={closeNav}

@@ -2,15 +2,17 @@ import React, { Component } from "react";
 import axios from "axios";
 import { css } from "emotion";
 
+import { colors } from "../theme";
+
 const inputStyle = css`
   display: block;
   text-align: left;
   width: 100%;
   padding: 4px 10px;
+  color: ${colors.text};
   margin-top: 4px;
-  background-color: rgba(39, 51, 63, 0.5);
-  border: 2px solid rgba(181, 210, 234, 0.2);
-  color: #eee;
+  background-color: ${colors.primaryDark};
+  border: 2px solid ${colors.secondaryDarkest};
 `;
 
 const labelStyle = css`
@@ -24,17 +26,18 @@ const buttonStyle = css`
   padding: 6px 15px;
   font-weight: 500;
   margin-top: 10px;
-  background-color: rgba(39, 51, 63, 0.5);
-  color: #eee;
-  border: 2px solid rgba(181, 210, 234, 0.2);
+  background-color: ${colors.primaryDark};
+  color: ${colors.text};
+  border: 2px solid ${colors.secondaryTrans};
   cursor: pointer;
   transition: background-color 0.2s;
   &:hover {
-    background-color: rgba(181, 210, 234, 0.25);
+    background-color: ${colors.secondaryDarker};
+    color: ${colors.white};
   }
   &:disabled {
     cursor: not-allowed;
-    background-color: rgba(181, 210, 234, 0.25);
+    background-color: ${colors.secondaryDarker};
   }
 `;
 
@@ -157,8 +160,8 @@ class ContactForm extends Component {
               text-align: left;
               margin-bottom: 10px;
               padding: 5px 15px;
-              border: 2px solid rgba(181, 210, 234, 0.2);
-              background-color: ${error ? "#500" : "#050"};
+              border: 2px solid ${error ? colors.errorLight : colors.successLight};
+              background-color: ${error ? colors.error : colors.success};
             `}
           >
             {successErrorMessage}

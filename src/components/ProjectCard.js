@@ -1,6 +1,8 @@
 import React from "react";
 import { css } from "emotion";
 
+import { colors } from "../theme";
+
 const contentStyle = css`
   position: absolute;
   display: flex;
@@ -11,8 +13,8 @@ const contentStyle = css`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #151922;
-  border: 2px solid rgba(181, 210, 234, 0.3);
+  background-color: ${colors.background};
+  border: 2px solid ${colors.secondaryDarker};
   opacity: 0;
   transition: opacity 0.5s 0.2s;
   cursor: default;
@@ -21,9 +23,8 @@ const contentStyle = css`
 
 const buttonStyle = css`
   display: inline-block;
-  border: 1px solid rgba(181, 210, 234, 0.25);
-  background-color: rgba(39, 51, 63, 0.5);
-  color: #eee;
+  border: 1px solid ${colors.secondaryTrans};
+  background-color: ${colors.primaryDark};
   padding: 2px 12px;
   font-weight: 500;
   font-size: 0.8rem;
@@ -32,8 +33,8 @@ const buttonStyle = css`
   cursor: pointer;
   transition: background-color 0.2s;
   &:hover {
-    background-color: rgba(181, 210, 234, 0.25);
-    color: #eee;
+    background-color: ${colors.secondaryDarker};
+    color: ${colors.white};
   }
   &:last-of-type {
     margin-right: 0;

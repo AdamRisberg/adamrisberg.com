@@ -13,7 +13,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
-import { breakpoints } from "./data";
+
+import { breakpoints, colors } from "./theme";
 
 smoothscroll.polyfill();
 
@@ -30,8 +31,8 @@ injectGlobal`
 
   body {
     box-sizing: border-box;
-    background-color: #151922;
-    color: #eee;
+    background-color: ${colors.background};
+    color: ${colors.text};
   }
 
   input,
@@ -45,12 +46,12 @@ injectGlobal`
   a:visited {
     color: inherit;
     text-decoration: none;
-    color: #eee;
+    color: ${colors.text};
     transition: color 0.2s;
   }
 
   a:hover {
-    color: rgba(181, 210, 234, 1);
+    color: ${colors.secondary};
   }
 
   img {

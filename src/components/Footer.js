@@ -1,14 +1,16 @@
 import React from "react";
 import { css } from "emotion";
 
+import { colors } from "../theme";
+
 function Footer() {
   return (
     <footer
       className={css`
         text-align: right;
-        background-color: #000;
+        background-color: ${colors.black};
         font-size: 0.8rem;
-        color: #ddd;
+        color: ${colors.textDark};
       `}
     >
       <div

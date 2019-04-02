@@ -1,7 +1,8 @@
 import React from "react";
 import { HamburgerIcon, LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
 import { css } from "emotion";
-import { breakpoints } from "../data";
+
+import { breakpoints } from "../theme";
 import { handleLinkClick } from "../utils";
 
 const liStyle = css`

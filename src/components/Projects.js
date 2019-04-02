@@ -5,7 +5,8 @@ import ProjectCard from "./ProjectCard";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
-import { projects, breakpoints } from "../data";
+import { projects } from "../data";
+import { breakpoints } from "../theme";
 import { useInView } from "../utils";
 
 function Projects({ sectionRef }) {

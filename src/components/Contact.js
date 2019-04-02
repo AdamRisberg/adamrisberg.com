@@ -6,7 +6,7 @@ import SectionTitle from "./SectionTitle";
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 
-import { breakpoints } from "../data";
+import { breakpoints } from "../theme";
 import { useInView } from "../utils";
 
 function Contact({ sectionRef }) {

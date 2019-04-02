@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 
 import { LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
-import { breakpoints } from "../data";
+import { breakpoints } from "../theme";
 
 const anchorStyle = css`
   margin-right: 24px;

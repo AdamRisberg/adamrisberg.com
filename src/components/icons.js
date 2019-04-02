@@ -1,17 +1,18 @@
 import React from "react";
 import { css } from "emotion";
-import { breakpoints } from "../data";
+
+import { breakpoints, colors } from "../theme";
 
 const svgStyle = css`
   cursor: pointer;
   margin-bottom: -4px;
   &:hover path {
-    fill: rgba(181, 210, 234, 1);
+    fill: ${colors.secondary};
   }
 `;
 
 const pathStyle = css`
-  fill: #eee;
+  fill: ${colors.text};
   transition: fill 0.2s;
 `;
 

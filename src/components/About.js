@@ -5,7 +5,8 @@ import { ListCard, TextCard } from "./aboutCards";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
-import { about, breakpoints } from "../data";
+import { about } from "../data";
+import { breakpoints } from "../theme";
 
 const colStyle = css`
   width: 33.333%;
@@ -16,7 +17,6 @@ const colStyle = css`
   @media (max-width: ${breakpoints.medium}) {
     width: 50%;
     margin-bottom: 0;
-
     &:last-of-type {
       margin-bottom: 40px;
     }

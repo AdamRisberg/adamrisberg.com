@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { breakpoints } from "../data";
+import { breakpoints, colors } from "../theme";
 import { handleLinkClick } from "../utils";
 
 function HeroImage({ image, sectionRefs }) {
@@ -26,8 +26,8 @@ function HeroImage({ image, sectionRefs }) {
         height: calc(100vh - 45px);
         min-height: 255px;
         flex-grow: 1;
-        border-bottom: 2px solid #27333f;
-        border-top: 2px solid #27333f;
+        border-bottom: 2px solid ${colors.primary};
+        border-top: 2px solid ${colors.primary};
         opacity: ${loaded ? "1" : "0"};
         transition: opacity 1s;
         background-image: url(${image});
@@ -35,9 +35,9 @@ function HeroImage({ image, sectionRefs }) {
         @media (max-width: ${breakpoints.medium}) {
           background-image: linear-gradient(
               to bottom,
-              rgba(0, 0, 0, 0),
-              rgba(0, 0, 0, 0.3),
-              rgba(0, 0, 0, 0)
+              ${colors.transparent},
+              ${colors.darken},
+              ${colors.transparent}
             ),
             url(${image});
         }
@@ -104,17 +104,16 @@ function HeroImage({ image, sectionRefs }) {
             href="#projects"
             className={css`
               display: inline-block;
-              border: 2px solid rgba(181, 210, 234, 0.2);
-              background-color: rgba(39, 51, 63, 0.5);
-              color: #eee;
+              border: 2px solid ${colors.secondaryTrans};
+              background-color: ${colors.primaryTrans};
               padding: 8px 16px;
               font-weight: 500;
               margin-top: 20px;
               cursor: pointer;
               transition: background-color 0.2s;
               &:hover {
-                background-color: rgba(181, 210, 234, 0.25);
-                color: #fff;
+                background-color: ${colors.secondaryDarker};
+                color: ${colors.white};
               }
               @media (max-width: ${breakpoints.medium}) {
                 padding: 6px 16px;

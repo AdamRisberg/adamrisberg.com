@@ -138,11 +138,6 @@ const myJourneyParagraphs = [
   "With my interest now peaked, I continued taking every course I could find online, working through tutorials, watching conferences, etc. It quickly became my primary focus and passion, where I continue learning every day and seeking out new challenges."
 ];
 
-export const breakpoints = {
-  medium: "820px",
-  small: "580px"
-};
-
 export const about = {
   mainSkills,
   currentlyLearning,
