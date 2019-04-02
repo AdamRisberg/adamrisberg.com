@@ -88,7 +88,7 @@ function useAxiosPost(url, body) {
 }
 
 function ContactForm() {
-  const [body, setBody] = React.useState("");
+  const [body, setBody] = React.useState(null);
   const { sending, response, error } = useAxiosPost(
     "https://usebasin.com/f/ddbe35ae8070.json",
     body
@@ -96,7 +96,7 @@ function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setBody(JSON.stringify(getFormData(e.target)));
+    setBody(getFormData(e.target));
   }
 
   return (
