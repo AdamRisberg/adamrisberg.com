@@ -1,6 +1,7 @@
 export const colors = {
   black: "#000",
   white: "#fff",
+  lightGray: "#ccc",
   text: "#eee",
   textDark: "#ddd",
   error: "#500",
@@ -17,10 +18,14 @@ export const colors = {
   secondaryDarkest: "#3C4856",
   secondaryTrans: "rgba(181, 210, 234, 0.3)",
   darken: "rgba(0, 0, 0, .3)",
-  transparent: "rgba(0, 0, 0, 0)"
+  transparent: "rgba(0, 0, 0, 0)",
+  resumePrimary: "#373d48",
+  resumeSecondary: "#252932"
 };
 
 export const breakpoints = {
-  medium: "820px",
-  small: "580px"
+  large: "820px",
+  medium: "700px",
+  small: "580px",
+  extraSmall: "420px"
 };

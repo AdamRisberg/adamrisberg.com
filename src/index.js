@@ -24,24 +24,18 @@ injectGlobal`
     padding: 0;
     box-sizing: inherit;
   }
-
-  html {
-    font-family: Saira, sans-serif;
-  }
-
+  html { font-family: Saira, sans-serif; }
   body {
     box-sizing: border-box;
     background-color: ${colors.background};
     color: ${colors.text};
   }
-
   input,
   textarea,
   button {
     font-size: inherit;
     font-family: inherit;
   }
-
   a,
   a:visited {
     color: inherit;
@@ -49,25 +43,18 @@ injectGlobal`
     color: ${colors.text};
     transition: color 0.2s;
   }
-
-  a:hover {
-    color: ${colors.secondary};
-  }
-
+  a:hover { color: ${colors.secondary}; }
   img {
     display: block;
     width: 100%;
   }
-
   @media (max-width: ${breakpoints.small}) {
-    body {
-      text-align: center;
-    }
+    body { text-align: center; }
   }
 `;
 
 function App() {
-  const [ navOpen, setNavOpen ] = React.useState(false);
+  const [navOpen, setNavOpen] = React.useState(false);
 
   const projectSectionRef = React.useRef();
   const aboutSectionRef = React.useRef();

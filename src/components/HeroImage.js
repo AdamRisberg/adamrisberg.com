@@ -31,8 +31,7 @@ function HeroImage({ image, sectionRefs }) {
         opacity: ${loaded ? "1" : "0"};
         transition: opacity 1s;
         background-image: url(${image});
-
-        @media (max-width: ${breakpoints.medium}) {
+        @media (max-width: ${breakpoints.large}) {
           background-image: linear-gradient(
               to bottom,
               ${colors.transparent},
@@ -66,7 +65,7 @@ function HeroImage({ image, sectionRefs }) {
               font-size: 3rem;
               line-height: 3rem;
               text-shadow: 0px 0px 8px black;
-              @media (max-width: ${breakpoints.medium}) {
+              @media (max-width: ${breakpoints.large}) {
                 font-size: 2.4rem;
                 line-height: 2.4rem;
               }
@@ -86,7 +85,7 @@ function HeroImage({ image, sectionRefs }) {
               font-size: 2rem;
               line-height: 2rem;
               text-shadow: 0px 0px 8px black;
-              @media (max-width: ${breakpoints.medium}) {
+              @media (max-width: ${breakpoints.large}) {
                 font-size: 1.6rem;
                 line-height: 1.6rem;
               }
@@ -115,7 +114,7 @@ function HeroImage({ image, sectionRefs }) {
                 background-color: ${colors.secondaryDarker};
                 color: ${colors.white};
               }
-              @media (max-width: ${breakpoints.medium}) {
+              @media (max-width: ${breakpoints.large}) {
                 padding: 6px 16px;
               }
             `}

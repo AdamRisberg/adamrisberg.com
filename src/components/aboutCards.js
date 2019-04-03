@@ -25,7 +25,7 @@ const titleStyle = css`
   margin-bottom: 0;
 `;
 
-export function ListCard({ title, list = [] }) {
+export function ListCard({ title, list = [], cardStyle }) {
   const ref = React.useRef();
   const show = useInView(ref, 100);
 
@@ -34,6 +34,7 @@ export function ListCard({ title, list = [] }) {
       ref={ref}
       className={css`
         ${listCardStyle}
+        ${cardStyle}
         transform: scaleY(${show ? "1" : "0"});
       `}
     >
@@ -44,12 +45,8 @@ export function ListCard({ title, list = [] }) {
           border: 2px solid ${colors.primary};
           padding: 10px 20px;
           flex-grow: 1;
-          & li {
-            margin-bottom: 8px;
-          }
-          & li:last-of-type {
-            margin-bottom: 0;
-          }
+          & li { margin-bottom: 8px; }
+          & li:last-of-type { margin-bottom: 0; }
         `}
       >
         {list.map(item => (
@@ -78,12 +75,8 @@ export function TextCard({ title, paragraphs = [] }) {
           border: 2px solid ${colors.primary};
           padding: 15px 20px;
           text-align: left;
-          & p {
-            margin-bottom: 15px;
-          }
-          & p:last-of-type {
-            margin-bottom: 0;
-          }
+          & p { margin-bottom: 15px; }
+          & p:last-of-type { margin-bottom: 0; }
         `}
       >
         {paragraphs.map(paragraph => (

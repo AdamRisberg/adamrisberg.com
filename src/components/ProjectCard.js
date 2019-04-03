@@ -36,9 +36,7 @@ const buttonStyle = css`
     background-color: ${colors.secondaryDarker};
     color: ${colors.white};
   }
-  &:last-of-type {
-    margin-right: 0;
-  }
+  &:last-of-type { margin-right: 0; }
 `;
 
 const cardStyle = css`
@@ -48,12 +46,10 @@ const cardStyle = css`
   overflow: hidden;
   max-width: 420px;
   margin: 0 auto;
-
   &:hover [data-project-content] {
     opacity: 1;
     pointer-events: auto;
   }
-
   &:hover [data-project-content] div:nth-of-type(1) {
     transform: translateY(0);
     transition: transform 0.3s 0.5s;

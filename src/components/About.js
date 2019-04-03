@@ -14,12 +14,10 @@ const colStyle = css`
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  @media (max-width: ${breakpoints.medium}) {
+  @media (max-width: ${breakpoints.large}) {
     width: 50%;
     margin-bottom: 0;
-    &:last-of-type {
-      margin-bottom: 40px;
-    }
+    &:last-of-type { margin-bottom: 40px; }
   }
   @media (max-width: ${breakpoints.small}) {
     width: 100%;
@@ -27,7 +25,7 @@ const colStyle = css`
 `;
 
 const lastCardStyle = css`
-  @media (max-width: ${breakpoints.medium}) {
+  @media (max-width: ${breakpoints.large}) {
     width: 50%;
     padding: 0 10px;
   }
@@ -61,7 +59,7 @@ function About({ sectionRef }) {
         <div
           className={css`
           ${colStyle}
-          @media (max-width: ${breakpoints.medium}) {
+          @media (max-width: ${breakpoints.large}) {
             width: 100%;
             flex-direction: row;
             flex-wrap: wrap;

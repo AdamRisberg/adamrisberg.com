@@ -28,7 +28,7 @@ function Contact({ sectionRef }) {
             transition: transform 1s, opacity 1s;
             opacity: ${show ? "1" : "0"};
             transform: translateY(${show ? "0" : "200px"});
-            @media (max-width: ${breakpoints.medium}) {
+            @media (max-width: ${breakpoints.large}) {
               width: 100%;
               padding: 0;
               order: 1;
@@ -49,7 +49,7 @@ function Contact({ sectionRef }) {
             opacity: ${show ? "1" : "0"};
             transform: translateY(${show ? "0" : "200px"});
             padding-top: calc(1rem + 4px);
-            @media (max-width: ${breakpoints.medium}) {
+            @media (max-width: ${breakpoints.large}) {
               width: 100%;
               padding: 0;
               margin-bottom: 50px;

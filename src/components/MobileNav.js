@@ -41,9 +41,7 @@ function MobileNav({ open, closeNav, sectionRefs }) {
           margin-left: auto;
           margin-right: 20px;
           transition: color 0.2s;
-          &:hover {
-            color: ${colors.secondary};
-          }
+          &:hover { color: ${colors.secondary}; }
         `}
         onClick={closeNav}
       >
@@ -88,10 +86,7 @@ function MobileNav({ open, closeNav, sectionRefs }) {
             text-align: center;
             transform: translateY(${open ? "0" : "-1200px"});
             transition: transform 0.3s 0.2s;
-
-            & a {
-              margin: 0 12px;
-            }
+            & a { margin: 0 12px; }
           `}
         >
           <a

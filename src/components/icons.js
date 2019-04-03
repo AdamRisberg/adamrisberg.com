@@ -6,9 +6,7 @@ import { breakpoints, colors } from "../theme";
 const svgStyle = css`
   cursor: pointer;
   margin-bottom: -4px;
-  &:hover path {
-    fill: ${colors.secondary};
-  }
+  &:hover path { fill: ${colors.secondary}; }
 `;
 
 const pathStyle = css`
@@ -27,7 +25,7 @@ export function HamburgerIcon({ onClick }) {
         right: 20px;
         z-index: 999;
         transition: opacity 0.3s;
-        @media (max-width: ${breakpoints.medium}) {
+        @media (max-width: ${breakpoints.large}) {
           display: block;
         }
       `}

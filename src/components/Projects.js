@@ -29,15 +29,12 @@ function Projects({ sectionRef }) {
               width: 33.333%;
               padding: 0 10px;
               margin-bottom: 40px;
-
               transition: opacity 1s ${i / 5}s, transform 1s ${i / 5}s;
               opacity: ${show ? "1" : "0"};
               transform: translateY(${show ? "0" : "200px"});
-
-              @media (max-width: ${breakpoints.medium}) {
+              @media (max-width: ${breakpoints.large}) {
                 width: 50%;
               }
-
               @media (max-width: ${breakpoints.small}) {
                 width: 100%;
                 opacity: 1;

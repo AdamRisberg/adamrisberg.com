@@ -32,7 +32,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
       {showHamburger && <HamburgerIcon onClick={openNav} />}
       <ul
         className={css`
-          @media (max-width: ${breakpoints.medium}) {
+          @media (max-width: ${breakpoints.large}) {
             display: none;
           }
         `}
@@ -67,10 +67,8 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
       </ul>
       <div
         className={css`
-          & a {
-            margin-left: 20px;
-          }
-          @media (max-width: ${breakpoints.medium}) {
+          & a { margin-left: 20px; }
+          @media (max-width: ${breakpoints.large}) {
             display: none;
           }
         `}
