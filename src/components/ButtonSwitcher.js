@@ -19,7 +19,7 @@ const buttonStyle = css`
   }
   &:disabled {
     cursor: default;
-    background-color: ${colors.secondaryDark};
+    background-color: ${colors.secondaryDarker};
     font-weight: 600;
   }
   @media (max-width: ${breakpoints.small}) {
@@ -36,7 +36,7 @@ function ButtonSwitcher({ labels = [], children }) {
         className={css`
           margin-bottom: 20px;
           display: inline-block;
-          border: 2px solid ${colors.secondaryDark};
+          border: 2px solid ${colors.secondaryDarker};
           @media (max-width: ${breakpoints.small}) {
             display: block;
             max-width: 420px;

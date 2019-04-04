@@ -236,7 +236,7 @@ function MainSkill({ title, description, link, showLine, showBullet }) {
       )}
       <div>
         {title && <h3>{title}</h3>}
-        {link && <a href={link}>{link}</a>}
+        {link && <a href={link.href}>{link.label}</a>}
         <p>{description}</p>
       </div>
     </div>

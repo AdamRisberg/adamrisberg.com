@@ -155,31 +155,46 @@ const resumeWorkHistory = [
 const resumeWebProjects = [
   {
     title: "Only Music Folders Online Store",
-    link: "https://www.onlymusicfolders.com",
+    link: {
+      label: "www.onlymusicfolders.com",
+      href: "https://www.onlymusicfolders.com"
+    },
     description:
       "Opencart installation, customized to handle special product option requirements and to allow integration with the company's business software. (Opencart, PHP, MySQL)"
   },
   {
     title: "Deer River Folio Website",
-    link: "https://www.deerriverfolio.com",
+    link: {
+      label: "www.deerriverfolio.com",
+      href: "https://www.deerriverfolio.com"
+    },
     description:
       "Redesign of an old site to make it mobile friendly with improved look, user experience, and maintainability. (React & Static Rendering)"
   },
   {
     title: "React Express Cart",
-    link: "https://www.cart.adamrisberg.com",
+    link: {
+      label: "www.cart.adamrisberg.com",
+      href: "https://www.cart.adamrisberg.com"
+    },
     description:
       "An open source React and Express based shopping cart system. Similar to Opencart, Magento, etc. (React, Express, MongoDB)"
   },
   {
     title: "React Input Position",
-    link: "https://myniztan.github.io/react-input-position",
+    link: {
+      label: "myniztan.github.io/react-input-position",
+      href: "https://myniztan.github.io/react-input-position"
+    },
     description:
       "An open source React component that decorates it's children with mouse/touch position tracking and a status toggle fired by click/gesture events. (React)"
   },
   {
     title: "React Image Magnifiers",
-    link: "https://myniztan.github.io/react-image-magnifiers",
+    link: {
+      label: "myniztan.github.io/react-image-magnifiers",
+      href: "https://myniztan.github.io/react-image-magnifiers"
+    },
     description:
       "An open source collection of responsive, image magnifying React components with mouse and touch interactions. (React)"
   }
