@@ -2,7 +2,8 @@ export const colors = {
   black: "#000",
   white: "#fff",
   lightGray: "#ccc",
-  text: "#eee",
+  lighterGray: "#ddd",
+  text: "#fafaff",
   textDark: "#ddd",
   error: "#500",
   errorLight: "#682A2F",
@@ -27,5 +28,5 @@ export const breakpoints = {
   large: "820px",
   medium: "700px",
   small: "580px",
-  extraSmall: "420px"
+  extraSmall: "450px"
 };

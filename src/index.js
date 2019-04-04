@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import { injectGlobal } from "emotion";
 
 import Header from "./components/Header";
-import Projects from "./components/Projects";
+import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -36,6 +36,7 @@ injectGlobal`
     font-size: inherit;
     font-family: inherit;
   }
+  button:active { outline: none; }
   a,
   a:visited {
     color: inherit;
@@ -75,7 +76,7 @@ function App() {
           contact: contactSectionRef
         }}
       />
-      <Projects sectionRef={projectSectionRef} />
+      <Portfolio sectionRef={projectSectionRef} />
       <About sectionRef={aboutSectionRef} />
       <Contact sectionRef={contactSectionRef} />
       <Footer />

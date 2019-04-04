@@ -1,6 +1,8 @@
 import React from "react";
 import { css } from "emotion";
 
+import { breakpoints } from "../theme";
+
 function Section({ id, sectionRef, children }) {
   return (
     <section
@@ -14,6 +16,12 @@ function Section({ id, sectionRef, children }) {
           margin: 0 auto;
           padding: 0 20px 80px 20px;
           overflow: hidden;
+        }
+        @media (max-width: ${breakpoints.extraSmall}) {
+          padding: 0 10px;
+          &:last-of-type {
+            padding: 0 10px 60px 10px;
+          }
         }
       `}
     >

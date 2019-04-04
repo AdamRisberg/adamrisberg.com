@@ -1,7 +1,6 @@
 import React from "react";
 import { css } from "emotion";
 
-import { useInView } from "../utils";
 import { breakpoints, colors } from "../theme";
 
 const listCardStyle = css`
@@ -27,7 +26,6 @@ const titleStyle = css`
 
 export function ListCard({ title, list = [], cardStyle }) {
   const ref = React.useRef();
-  const show = useInView(ref, 100);
 
   return (
     <div
@@ -35,7 +33,6 @@ export function ListCard({ title, list = [], cardStyle }) {
       className={css`
         ${listCardStyle}
         ${cardStyle}
-        transform: scaleY(${show ? "1" : "0"});
       `}
     >
       <h4 className={titleStyle}>{title}</h4>
@@ -45,8 +42,12 @@ export function ListCard({ title, list = [], cardStyle }) {
           border: 2px solid ${colors.primary};
           padding: 10px 20px;
           flex-grow: 1;
-          & li { margin-bottom: 8px; }
-          & li:last-of-type { margin-bottom: 0; }
+          & li {
+            margin-bottom: 8px;
+          }
+          & li:last-of-type {
+            margin-bottom: 0;
+          }
         `}
       >
         {list.map(item => (
@@ -59,24 +60,21 @@ export function ListCard({ title, list = [], cardStyle }) {
 
 export function TextCard({ title, paragraphs = [] }) {
   const ref = React.useRef();
-  const show = useInView(ref, 100);
 
   return (
-    <div
-      ref={ref}
-      className={css`
-        ${listCardStyle}
-        transform: scaleY(${show ? "1" : "0"});
-      `}
-    >
+    <div ref={ref} className={listCardStyle}>
       <h4 className={titleStyle}>{title}</h4>
       <div
         className={css`
           border: 2px solid ${colors.primary};
           padding: 15px 20px;
           text-align: left;
-          & p { margin-bottom: 15px; }
-          & p:last-of-type { margin-bottom: 0; }
+          & p {
+            margin-bottom: 15px;
+          }
+          & p:last-of-type {
+            margin-bottom: 0;
+          }
         `}
       >
         {paragraphs.map(paragraph => (

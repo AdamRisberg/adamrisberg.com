@@ -72,7 +72,7 @@ function MobileNav({ open, closeNav, sectionRefs }) {
           `}
         >
           <li className={liStyle}>
-            <a onClick={handleLinkClick(sectionRefs.projects, closeNav)} href="#projects">PROJECTS</a>
+            <a onClick={handleLinkClick(sectionRefs.projects, closeNav)} href="#projects">PORTFOLIO</a>
           </li>
           <li className={liStyle}>
             <a onClick={handleLinkClick(sectionRefs.about, closeNav)} href="#about">ABOUT</a>

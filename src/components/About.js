@@ -30,6 +30,7 @@ const lastCardStyle = css`
     padding: 0 10px;
   }
   @media (max-width: ${breakpoints.small}) {
+    padding: 0;
     width: 100%;
   }
 `;

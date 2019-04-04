@@ -31,17 +31,21 @@ function SideBar({ children }) {
         width: 210px;
         flex-shrink: 0;
         background-color: ${colors.resumePrimary};
-        color: ${colors.white};
+        color: ${colors.text};
         & a,
-        & a:visited { color: ${colors.white}; }
+        & a:visited { color: ${colors.text}; }
         @media (max-width: ${breakpoints.medium}) {
           display: flex;
           flex-wrap: wrap;
+          padding: 0 5px 10px 5px;
           width: 100%;
-          background-color: ${colors.white};
+          background-color: ${colors.text};
           color: ${colors.black};
           & a,
           & a:visited { color: ${colors.black}; }
+        }
+        @media (max-width: ${breakpoints.extraSmall}) {
+          padding: 0 0 10px 0;
         }
       `}
     >
@@ -54,12 +58,12 @@ function Main({ children }) {
   return (
     <div
       className={css`
-        padding: 0px 20px;
+        padding: 10px 20px;
         width: 100%;
-        background-color: ${colors.white};
+        background-color: ${colors.text};
         color: ${colors.black};
-        @media (max-width: ${breakpoints.medium}) {
-          padding: 15px;
+        @media (max-width: ${breakpoints.extraSmall}) {
+          padding: 5px 15px;
         }
       `}
     >
@@ -89,7 +93,7 @@ function SideBarSection({ title, skills }) {
           padding: 8px 15px;
           margin-bottom: 10px;
           @media (max-width: ${breakpoints.medium}) {
-            background-color: ${colors.white};
+            background-color: ${colors.text};
             padding: 8px 0 6px 0;
             border-bottom: 1px solid ${colors.lightGray};
           }
@@ -145,6 +149,7 @@ function MainSection({ title, skills, showBullet }) {
           color: black;
           font-weight: bold;
           margin-bottom: 4px;
+          word-break: break-all;
         }
       `}
     >
@@ -181,6 +186,12 @@ const bulletStyle = css`
   background-color: ${colors.resumePrimary};
   margin-right: 20px;
   z-index: 1;
+  @media (max-width: ${breakpoints.small}) {
+    margin-top: 2px;
+    width: .8rem;
+    height: .8rem;
+    margin-right: 12px;
+  }
 `;
 
 const lineStyle = css`
@@ -192,6 +203,13 @@ const lineStyle = css`
     left: 0.53rem;
     position: absolute;
     border-left: 2px solid ${colors.resumePrimary};
+  }
+
+  @media (max-width: ${breakpoints.small}) {
+    &::after {
+      top: .9rem;
+      left: .3rem;
+    }
   }
 `;
 

@@ -43,7 +43,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
             className={anchorStyle}
             href="#projects"
           >
-            PROJECTS
+            PORTFOLIO
           </a>
         </li>
         <li className={liStyle}>
