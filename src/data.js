@@ -212,17 +212,8 @@ const resumeEducation = [
 
 const resumePersonalInfo = [
   {
-    title: "Address",
-    description: (
-      <span>
-        621 N 23rd St. <br />
-        Copperas Cove, TX 76522
-      </span>
-    )
-  },
-  {
-    title: "Phone",
-    description: "218-246-8625"
+    title: "Location",
+    description: "Copperas Cove, TX"
   },
   {
     title: "E-mail",
