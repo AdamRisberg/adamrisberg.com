@@ -87,33 +87,18 @@ export const projects = [
   }
 ];
 
-const mainSkills = [
-  "Javascript",
-  "React",
-  "HTML",
-  "CSS",
-  "Redux",
-  "Node",
-  "Express",
-  "C# / WPF",
-  "MYSQL",
-  "MongoDB"
-];
+const languages = ["Javascript", "C#"];
 
-const currentlyLearning = ["React Hooks"];
+const frontEnd = ["React", "React Router", "Redux", "HTML", "CSS", "SCSS"];
+
+const backEnd = ["Node", "Express", "MYSQL", "MongoDB"];
 
 const tools = [
   "VS Code",
   "Visual Studio",
-  "Git",
-  "Github",
+  "Git / Github",
   "Powershell",
   "Bash"
-];
-
-const education = [
-  "University of Advancing Technologies",
-  "AA - Digital Animation Production"
 ];
 
 const multimedia = [
@@ -124,11 +109,21 @@ const multimedia = [
   "Maya"
 ];
 
+const otherSkills = ["NPM", "Webpack", "Data Structures", "Algorithms"];
+
+const education = [
+  <React.Fragment>
+    AA - Digital Animation Production
+    <br />
+    University of Advancing Technologies
+  </React.Fragment>,
+  "Deer River High School"
+];
+
 const hobbies = [
   "Fitness",
   "Guitar",
   "Music & Video Production",
-  "3D Animation",
   "Video Games",
   "TV & Movies"
 ];
@@ -139,6 +134,18 @@ const myJourneyParagraphs = [
   "Eventually, I was hired to create another website. This time, more complex than anything I had created in the past. I decided it was time to drop Dreamweaver and finally start learning HTML, CSS, and JavaScript. Which changed everything. As I learned more and more, I started discovering things like React, Node.js, Express, etc. I quickly fell in love with the complexity, fast pace, and seemingly limitless possibilities that I didn’t know existed in web development. There’s always something new to learn.",
   "With my interest now peaked, I continued taking every course I could find online, working through tutorials, watching conferences, etc. It quickly became my primary focus and passion, where I continue learning every day and seeking out new challenges."
 ];
+
+export const about = {
+  languages,
+  frontEnd,
+  backEnd,
+  tools,
+  multimedia,
+  otherSkills,
+  education,
+  hobbies,
+  myJourneyParagraphs
+};
 
 const resumeWorkHistory = [
   {
@@ -332,14 +339,4 @@ export const resume = {
       skills: resumeAdditionalLinks
     }
   ]
-};
-
-export const about = {
-  mainSkills,
-  currentlyLearning,
-  tools,
-  education,
-  multimedia,
-  hobbies,
-  myJourneyParagraphs
 };

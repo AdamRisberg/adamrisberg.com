@@ -68,11 +68,14 @@ function MobileNav({ open, closeNav, sectionRefs }) {
               letter-spacing: 0.2rem;
               transform: translateY(${open ? "0" : "-1200px"});
             }
-            ${createListTransitions(open, 3)}
+            ${createListTransitions(open, 4)}
           `}
         >
           <li className={liStyle}>
             <a onClick={handleLinkClick(sectionRefs.projects, closeNav)} href="#projects">PORTFOLIO</a>
+          </li>
+          <li className={liStyle}>
+            <a onClick={handleLinkClick(sectionRefs.skills, closeNav)} href="#skills">SKILLS</a>
           </li>
           <li className={liStyle}>
             <a onClick={handleLinkClick(sectionRefs.about, closeNav)} href="#about">ABOUT</a>

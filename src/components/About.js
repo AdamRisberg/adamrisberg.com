@@ -9,81 +9,40 @@ import { about } from "../data";
 import { breakpoints } from "../theme";
 
 const colStyle = css`
-  width: 33.333%;
+  width: 50%;
   padding: 0 10px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  @media (max-width: ${breakpoints.large}) {
-    width: 50%;
-    margin-bottom: 0;
-    &:last-of-type { margin-bottom: 40px; }
-  }
-  @media (max-width: ${breakpoints.small}) {
-    width: 100%;
-  }
-`;
 
-const lastCardStyle = css`
-  @media (max-width: ${breakpoints.large}) {
-    width: 50%;
-    padding: 0 10px;
-  }
   @media (max-width: ${breakpoints.small}) {
-    padding: 0;
     width: 100%;
+    &:first-of-type {
+      margin-bottom: 0;
+    }
   }
 `;
 
 function About({ sectionRef }) {
   return (
-    <Section sectionRef={sectionRef} id="about">
+    <Section sectionRef={sectionRef} marginBottom="0" id="about">
       <SectionTitle text="ABOUT" />
+      <TextCard title="MY JOURNEY" paragraphs={about.myJourneyParagraphs} />
       <div
         className={css`
           display: flex;
           flex-wrap: wrap;
-          margin: 0 -10px -40px -10px;
+          margin: 0 -10px 0 -10px;
         `}
       >
         <div className={colStyle}>
-          <ListCard title={"MAIN SKILLS"} list={about.mainSkills} />
-          <ListCard
-            title={"CURRENTLY LEARNING"}
-            list={about.currentlyLearning}
-          />
-        </div>
-        <div className={colStyle}>
-          <ListCard title={"TOOLS"} list={about.tools} />
           <ListCard title={"EDUCATION"} list={about.education} />
         </div>
-        <div
-          className={css`
-          ${colStyle}
-          @media (max-width: ${breakpoints.large}) {
-            width: 100%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 0;
-          }
-          @media (max-width: ${breakpoints.small}) {
-            padding: 0 10px;
-          }
-        `}
-        >
-          <ListCard
-            cardStyle={lastCardStyle}
-            title={"MULTIMEDIA"}
-            list={about.multimedia}
-          />
-          <ListCard
-            cardStyle={lastCardStyle}
-            title={"HOBBIES"}
-            list={about.hobbies}
-          />
+        <div className={colStyle}>
+          <ListCard title={"HOBBIES"} list={about.hobbies} />
         </div>
       </div>
-      <TextCard title="MY JOURNEY" paragraphs={about.myJourneyParagraphs} />
+      
     </Section>
   );
 }

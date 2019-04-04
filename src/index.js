@@ -9,8 +9,9 @@ import { injectGlobal } from "emotion";
 
 import Header from "./components/Header";
 import Portfolio from "./components/Portfolio";
-import About from "./components/About";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import About from "./components/About";
 import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
 
@@ -58,8 +59,9 @@ function App() {
   const [navOpen, setNavOpen] = React.useState(false);
 
   const projectSectionRef = React.useRef();
-  const aboutSectionRef = React.useRef();
+  const skillSectionRef = React.useRef();
   const contactSectionRef = React.useRef();
+  const aboutSectionRef = React.useRef();
 
   const openNav = () => setNavOpen(true);
   const closeNav = () => setNavOpen(false);
@@ -72,11 +74,13 @@ function App() {
         showHamburger={!navOpen}
         sectionRefs={{
           projects: projectSectionRef,
+          skills: skillSectionRef,
           about: aboutSectionRef,
           contact: contactSectionRef
         }}
       />
       <Portfolio sectionRef={projectSectionRef} />
+      <Skills sectionRef={skillSectionRef} />
       <About sectionRef={aboutSectionRef} />
       <Contact sectionRef={contactSectionRef} />
       <Footer />
@@ -85,6 +89,7 @@ function App() {
         closeNav={closeNav}
         sectionRefs={{
           projects: projectSectionRef,
+          skills: skillSectionRef,
           about: aboutSectionRef,
           contact: contactSectionRef
         }}

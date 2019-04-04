@@ -48,6 +48,15 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
         </li>
         <li className={liStyle}>
           <a
+            onClick={handleLinkClick(sectionRefs.skills)}
+            className={anchorStyle}
+            href="#skills"
+          >
+            SKILLS
+          </a>
+        </li>
+        <li className={liStyle}>
+          <a
             onClick={handleLinkClick(sectionRefs.about)}
             className={anchorStyle}
             href="#about"
