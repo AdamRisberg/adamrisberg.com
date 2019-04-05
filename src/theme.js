@@ -1,3 +1,5 @@
+import { css } from "emotion";
+
 export const colors = {
   black: "#000",
   white: "#fff",
@@ -29,4 +31,24 @@ export const breakpoints = {
   medium: "700px",
   small: "580px",
   extraSmall: "450px"
+};
+
+export const styles = {
+  buttonPrimary: css`
+    display: inline-block;
+    border: 2px solid ${colors.secondaryTrans};
+    background-color: ${colors.primaryTrans};
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: ${colors.text};
+    &:hover {
+      background-color: ${colors.secondaryDarker};
+      color: ${colors.white};
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: ${colors.secondaryDarker};
+    }
+  `
 };

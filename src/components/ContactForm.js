@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { css } from "emotion";
 
-import { colors } from "../theme";
+import { colors, styles } from "../theme";
 
 const inputStyle = css`
   display: block;
@@ -11,6 +11,7 @@ const inputStyle = css`
   padding: 4px 10px;
   color: ${colors.text};
   margin-top: 4px;
+  resize: none;
   background-color: ${colors.primaryDark};
   border: 2px solid ${colors.secondaryDarkest};
 `;
@@ -23,22 +24,9 @@ const labelStyle = css`
 `;
 
 const buttonStyle = css`
+  ${styles.buttonPrimary}
   padding: 6px 15px;
-  font-weight: 500;
   margin-top: 10px;
-  background-color: ${colors.primaryDark};
-  color: ${colors.text};
-  border: 2px solid ${colors.secondaryTrans};
-  cursor: pointer;
-  transition: background-color 0.2s;
-  &:hover {
-    background-color: ${colors.secondaryDarker};
-    color: ${colors.white};
-  }
-  &:disabled {
-    cursor: not-allowed;
-    background-color: ${colors.secondaryDarker};
-  }
 `;
 
 function axiosPostReducer(state, action) {

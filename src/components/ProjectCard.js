@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { colors } from "../theme";
+import { colors, styles } from "../theme";
 
 const contentStyle = css`
   position: absolute;
@@ -22,20 +22,11 @@ const contentStyle = css`
 `;
 
 const buttonStyle = css`
-  display: inline-block;
-  border: 1px solid ${colors.secondaryTrans};
-  background-color: ${colors.primaryDark};
+  ${styles.buttonPrimary}
+  border-width: 1px;
   padding: 4px 12px;
-  font-weight: 500;
   font-size: 0.9rem;
-  margin-top: 10px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  &:hover {
-    background-color: ${colors.secondaryDarker};
-    color: ${colors.white};
-  }
+  margin: 10px 10px 0 0;
   &:last-of-type {
     margin-right: 0;
   }

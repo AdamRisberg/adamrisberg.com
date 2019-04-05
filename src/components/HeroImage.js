@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { breakpoints, colors } from "../theme";
+import { breakpoints, colors, styles } from "../theme";
 import { handleLinkClick } from "../utils";
 
 function HeroContent({ children }) {
@@ -84,18 +84,9 @@ function HeroButton({ onClick, href, children }) {
       onClick={onClick}
       href={href}
       className={css`
-        display: inline-block;
-        border: 2px solid ${colors.secondaryTrans};
-        background-color: ${colors.primaryTrans};
+        ${styles.buttonPrimary}
         padding: 8px 16px;
-        font-weight: 500;
         margin-top: 20px;
-        cursor: pointer;
-        transition: background-color 0.2s;
-        &:hover {
-          background-color: ${colors.secondaryDarker};
-          color: ${colors.white};
-        }
         @media (max-width: ${breakpoints.large}) {
           padding: 6px 16px;
         }
