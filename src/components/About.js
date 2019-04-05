@@ -1,12 +1,18 @@
 import React from "react";
 import { css } from "emotion";
-import { ListCard, TextCard } from "./aboutCards";
 
+import { ListCard, TextCard } from "./aboutCards";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
-import { about } from "../data";
+import about from "../data/about";
 import { breakpoints } from "../theme";
+
+const cardListStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px 0 -10px;
+`;
 
 const colStyle = css`
   width: 50%;
@@ -23,26 +29,25 @@ const colStyle = css`
   }
 `;
 
+function CardList({ children }) {
+  return (
+    <div className={cardListStyle}>
+      {React.Children.map(children, child => (
+        <div className={colStyle}>{child}</div>
+      ))}
+    </div>
+  );
+}
+
 function About({ sectionRef }) {
   return (
     <Section sectionRef={sectionRef} marginBottom="0" id="about">
       <SectionTitle text="ABOUT" />
       <TextCard title="MY JOURNEY" paragraphs={about.myJourneyParagraphs} />
-      <div
-        className={css`
-          display: flex;
-          flex-wrap: wrap;
-          margin: 0 -10px 0 -10px;
-        `}
-      >
-        <div className={colStyle}>
-          <ListCard title={"EDUCATION"} list={about.education} />
-        </div>
-        <div className={colStyle}>
-          <ListCard title={"HOBBIES"} list={about.hobbies} />
-        </div>
-      </div>
-      
+      <CardList>
+        <ListCard title={"EDUCATION"} list={about.education} />
+        <ListCard title={"HOBBIES"} list={about.hobbies} />
+      </CardList>
     </Section>
   );
 }

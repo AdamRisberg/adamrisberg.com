@@ -1,7 +1,8 @@
 import React from "react";
 import { css } from "emotion";
 
-import { LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
+import SocialLink from "./SocialLink";
+
 import { breakpoints } from "../theme";
 
 const anchorStyle = css`
@@ -40,27 +41,27 @@ function ContactInfo() {
       >
         myniztan@hotmail.com
       </a>
-      <a
+      <SocialLink
         className={anchorStyle}
-        aria-label="Linkedin"
+        type="LinkedIn"
         href="https://www.linkedin.com/in/adamrisberg"
-      >
-        <LinkedInIcon width="32px" height="32px" />
-      </a>
-      <a
+        width="32px"
+        height="32px"
+      />
+      <SocialLink
         className={anchorStyle}
-        aria-label="Github"
+        type="Github"
         href="https://github.com/myniztan"
-      >
-        <GithubIcon width="32px" height="32px" />
-      </a>
-      <a
+        width="32px"
+        height="32px"
+      />
+      <SocialLink
         className={anchorStyle}
-        aria-label="Codepen"
-        href="https://codepen.io/myniztan/"
-      >
-        <CodePenIcon width="32px" height="32px" />
-      </a>
+        type="CodePen"
+        href="https://codepen.io/myniztan"
+        width="32px"
+        height="32px"
+      />
     </React.Fragment>
   );
 }

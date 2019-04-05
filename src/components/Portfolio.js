@@ -7,7 +7,7 @@ import SectionTitle from "./SectionTitle";
 import ButtonSwitcher from "./ButtonSwitcher";
 import Resume from "./Resume";
 
-import { projects } from "../data";
+import { webProjects } from "../data/portfolio";
 import { breakpoints } from "../theme";
 import { useInView } from "../utils";
 
@@ -25,8 +25,8 @@ function Portfolio({ sectionRef }) {
             margin: 0 -10px -40px -10px;
           `}
         >
-          {projects.map((project, i) => (
-            <div
+          {webProjects.map((project, i) => (
+            <ProjectCard
               key={`project-${project.title}`}
               className={css`
                 width: 33.333%;
@@ -44,9 +44,8 @@ function Portfolio({ sectionRef }) {
                   transform: translateY(0);
                 }
               `}
-            >
-              <ProjectCard {...project} />
-            </div>
+              {...project}
+            />
           ))}
         </div>
         <Resume />

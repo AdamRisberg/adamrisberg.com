@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { breakpoints, colors } from "../theme"
+import { breakpoints, colors } from "../theme";
 
 function SectionTitle({ text, marginBottom = "40px" }) {
   return (
@@ -21,10 +21,19 @@ function SectionTitle({ text, marginBottom = "40px" }) {
         className={css`
           height: 4px;
           background-color: ${colors.text};
-          background: linear-gradient(to right, ${colors.text}, ${colors.background});
+          background: linear-gradient(
+            to right,
+            ${colors.text},
+            ${colors.background}
+          );
           margin-bottom: ${marginBottom};
           @media (max-width: ${breakpoints.small}) {
-            background: linear-gradient(to right, ${colors.background}, ${colors.text}, ${colors.background});
+            background: linear-gradient(
+              to right,
+              ${colors.background},
+              ${colors.text},
+              ${colors.background}
+            );
           }
         `}
       />

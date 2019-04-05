@@ -63,21 +63,20 @@ function App() {
   const contactSectionRef = React.useRef();
   const aboutSectionRef = React.useRef();
 
-  const openNav = () => setNavOpen(true);
-  const closeNav = () => setNavOpen(false);
+  const sectionRefs = {
+    projects: projectSectionRef,
+    skills: skillSectionRef,
+    about: aboutSectionRef,
+    contact: contactSectionRef
+  };
 
   return (
     <React.Fragment>
       <Header
         showHeroImage
-        openNav={openNav}
+        openNav={() => setNavOpen(true)}
         showHamburger={!navOpen}
-        sectionRefs={{
-          projects: projectSectionRef,
-          skills: skillSectionRef,
-          about: aboutSectionRef,
-          contact: contactSectionRef
-        }}
+        sectionRefs={sectionRefs}
       />
       <Portfolio sectionRef={projectSectionRef} />
       <Skills sectionRef={skillSectionRef} />
@@ -86,13 +85,8 @@ function App() {
       <Footer />
       <MobileNav
         open={navOpen}
-        closeNav={closeNav}
-        sectionRefs={{
-          projects: projectSectionRef,
-          skills: skillSectionRef,
-          about: aboutSectionRef,
-          contact: contactSectionRef
-        }}
+        closeNav={() => setNavOpen(false)}
+        sectionRefs={sectionRefs}
       />
     </React.Fragment>
   );

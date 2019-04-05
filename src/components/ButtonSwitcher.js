@@ -1,7 +1,7 @@
 import React from "react";
+import { css } from "emotion";
 
 import { colors, breakpoints } from "../theme";
-import { css } from "emotion";
 
 const buttonStyle = css`
   padding: 6px 15px;

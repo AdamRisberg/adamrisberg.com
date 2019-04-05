@@ -6,7 +6,9 @@ import { breakpoints, colors } from "../theme";
 const svgStyle = css`
   cursor: pointer;
   margin-bottom: -4px;
-  &:hover path { fill: ${colors.secondary}; }
+  &:hover path {
+    fill: ${colors.secondary};
+  }
 `;
 
 const pathStyle = css`

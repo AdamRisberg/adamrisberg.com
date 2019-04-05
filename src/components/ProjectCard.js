@@ -25,9 +25,9 @@ const buttonStyle = css`
   display: inline-block;
   border: 1px solid ${colors.secondaryTrans};
   background-color: ${colors.primaryDark};
-  padding: 2px 12px;
+  padding: 4px 12px;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-top: 10px;
   margin-right: 10px;
   cursor: pointer;
@@ -36,7 +36,9 @@ const buttonStyle = css`
     background-color: ${colors.secondaryDarker};
     color: ${colors.white};
   }
-  &:last-of-type { margin-right: 0; }
+  &:last-of-type {
+    margin-right: 0;
+  }
 `;
 
 const cardStyle = css`
@@ -73,37 +75,39 @@ const preTransformStyle = css`
   transition: transform 0.3s;
 `;
 
-function ProjectCard({ title, type, tech, image, links = [] }) {
+function ProjectCard({ className = "", title, type, tech, image, links = [] }) {
   return (
-    <div className={cardStyle}>
-      <img src={image} alt="React Cart" />
-      <div className={contentStyle} data-project-content>
-        <div
-          className={css`
-            font-weight: 600;
-            font-size: 1rem;
-            ${preTransformStyle}
-          `}
-        >
-          {title}
-        </div>
-        <div className={preTransformStyle}>{type}</div>
-        <div className={preTransformStyle}>{tech}</div>
-        <div
-          className={css`
-            transform: translateY(200px);
-            transition: transform 0.3s;
-          `}
-        >
-          {links.map(link => (
-            <a
-              key={`${title}-${link.title}`}
-              href={link.href}
-              className={buttonStyle}
-            >
-              {link.title}
-            </a>
-          ))}
+    <div className={className}>
+      <div className={cardStyle}>
+        <img src={image} alt="React Cart" />
+        <div className={contentStyle} data-project-content>
+          <div
+            className={css`
+              font-weight: 600;
+              font-size: 1rem;
+              ${preTransformStyle}
+            `}
+          >
+            {title}
+          </div>
+          <div className={preTransformStyle}>{type}</div>
+          <div className={preTransformStyle}>{tech}</div>
+          <div
+            className={css`
+              transform: translateY(200px);
+              transition: transform 0.3s;
+            `}
+          >
+            {links.map(link => (
+              <a
+                key={`${title}-${link.title}`}
+                href={link.href}
+                className={buttonStyle}
+              >
+                {link.title}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import throttle from "lodash.throttle";
 export function useInView(ref, offset) {
   const [inView, setInView] = React.useState(false);
   const doneRef = React.useRef(false);
-  
+
   React.useEffect(() => {
     checkInView(ref.current, offset, setInView, doneRef);
 

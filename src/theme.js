@@ -25,7 +25,7 @@ export const colors = {
 };
 
 export const breakpoints = {
-  large: "820px",
+  large: "840px",
   medium: "700px",
   small: "580px",
   extraSmall: "450px"

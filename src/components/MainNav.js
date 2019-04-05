@@ -1,34 +1,33 @@
 import React from "react";
-import { HamburgerIcon, LinkedInIcon, GithubIcon, CodePenIcon } from "./icons";
 import { css } from "emotion";
+
+import { HamburgerIcon } from "./icons";
+import SocialLink from "./SocialLink";
+import NavItem from "./NavItem";
 
 import { breakpoints } from "../theme";
 import { handleLinkClick } from "../utils";
 
-const liStyle = css`
+const navStyle = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  height: 45px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+`;
+
+const navItemStyle = css`
   display: inline-block;
   margin-right: 24px;
   cursor: pointer;
 `;
 
-const anchorStyle = css`
-  display: inline-block;
-`;
-
 function MainNav({ openNav, showHamburger, sectionRefs }) {
   return (
-    <nav
-      className={css`
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 500;
-        height: 45px;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 20px;
-      `}
-    >
+    <nav className={navStyle}>
       {showHamburger && <HamburgerIcon onClick={openNav} />}
       <ul
         className={css`
@@ -37,60 +36,59 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
           }
         `}
       >
-        <li className={liStyle}>
-          <a
-            onClick={handleLinkClick(sectionRefs.projects)}
-            className={anchorStyle}
-            href="#projects"
-          >
-            PORTFOLIO
-          </a>
-        </li>
-        <li className={liStyle}>
-          <a
-            onClick={handleLinkClick(sectionRefs.skills)}
-            className={anchorStyle}
-            href="#skills"
-          >
-            SKILLS
-          </a>
-        </li>
-        <li className={liStyle}>
-          <a
-            onClick={handleLinkClick(sectionRefs.about)}
-            className={anchorStyle}
-            href="#about"
-          >
-            ABOUT
-          </a>
-        </li>
-        <li className={liStyle}>
-          <a
-            onClick={handleLinkClick(sectionRefs.contact)}
-            className={anchorStyle}
-            href="#contact"
-          >
-            CONTACT
-          </a>
-        </li>
+        <NavItem
+          className={navItemStyle}
+          onClick={handleLinkClick(sectionRefs.projects)}
+          href="#projects"
+          label="PORTFOLIO"
+        />
+        <NavItem
+          className={navItemStyle}
+          onClick={handleLinkClick(sectionRefs.skills)}
+          href="#skills"
+          label="SKILLS"
+        />
+        <NavItem
+          className={navItemStyle}
+          onClick={handleLinkClick(sectionRefs.about)}
+          href="#about"
+          label="ABOUT"
+        />
+        <NavItem
+          className={navItemStyle}
+          onClick={handleLinkClick(sectionRefs.contact)}
+          href="#contact"
+          label="CONTACT"
+        />
       </ul>
       <div
         className={css`
-          & a { margin-left: 20px; }
+          & a {
+            margin-left: 20px;
+          }
           @media (max-width: ${breakpoints.large}) {
             display: none;
           }
         `}
       >
-        <a aria-label="Linkedin" href="https://www.linkedin.com/in/adamrisberg">
-          <LinkedInIcon width="20px" height="20px" />
-        </a>
-        <a aria-label="Github" href="https://github.com/myniztan">
-          <GithubIcon width="20px" height="20px" />
-        </a>
-        <a aria-label="Codepen" href="https://codepen.io/myniztan/">
-          <CodePenIcon width="20px" height="20px" />
-        </a>
+        <SocialLink
+          type="LinkedIn"
+          href="https://www.linkedin.com/in/adamrisberg"
+          width="20px"
+          height="20px"
+        />
+        <SocialLink
+          type="Github"
+          href="https://github.com/myniztan"
+          width="20px"
+          height="20px"
+        />
+        <SocialLink
+          type="CodePen"
+          href="https://codepen.io/myniztan"
+          width="20px"
+          height="20px"
+        />
       </div>
     </nav>
   );

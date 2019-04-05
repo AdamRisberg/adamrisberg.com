@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "emotion";
 
 import { colors, breakpoints } from "../theme";
-import { resume } from "../data";
+import resume from "../data/resume";
 
 function Container({ children }) {
   return (
@@ -13,7 +13,9 @@ function Container({ children }) {
         line-height: 17px;
         font-size: 14px;
         text-align: left;
-        & a:hover { text-decoration: underline; }
+        & a:hover {
+          text-decoration: underline;
+        }
         @media (max-width: ${breakpoints.medium}) {
           flex-direction: column;
         }
@@ -33,7 +35,9 @@ function SideBar({ children }) {
         background-color: ${colors.resumePrimary};
         color: ${colors.text};
         & a,
-        & a:visited { color: ${colors.text}; }
+        & a:visited {
+          color: ${colors.text};
+        }
         @media (max-width: ${breakpoints.medium}) {
           display: flex;
           flex-wrap: wrap;
@@ -42,7 +46,9 @@ function SideBar({ children }) {
           background-color: ${colors.text};
           color: ${colors.black};
           & a,
-          & a:visited { color: ${colors.black}; }
+          & a:visited {
+            color: ${colors.black};
+          }
         }
         @media (max-width: ${breakpoints.extraSmall}) {
           padding: 0 0 10px 0;
@@ -188,8 +194,8 @@ const bulletStyle = css`
   z-index: 1;
   @media (max-width: ${breakpoints.small}) {
     margin-top: 2px;
-    width: .8rem;
-    height: .8rem;
+    width: 0.8rem;
+    height: 0.8rem;
     margin-right: 12px;
   }
 `;
@@ -207,8 +213,8 @@ const lineStyle = css`
 
   @media (max-width: ${breakpoints.small}) {
     &::after {
-      top: .9rem;
-      left: .3rem;
+      top: 0.9rem;
+      left: 0.3rem;
     }
   }
 `;

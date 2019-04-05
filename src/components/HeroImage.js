@@ -4,6 +4,108 @@ import { css } from "emotion";
 import { breakpoints, colors } from "../theme";
 import { handleLinkClick } from "../utils";
 
+function HeroContent({ children }) {
+  return (
+    <div
+      className={css`
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+      `}
+    >
+      <div
+        className={css`
+          width: 100%;
+        `}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function HeroTitle({ children }) {
+  return (
+    <h1
+      className={css`
+        font-weight: 400;
+        letter-spacing: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        line-height: 3rem;
+        text-shadow: 0px 0px 8px black;
+        @media (max-width: ${breakpoints.large}) {
+          font-size: 2.4rem;
+          line-height: 2.4rem;
+        }
+        @media (max-width: ${breakpoints.small}) {
+          font-size: 2rem;
+          line-height: 2rem;
+          letter-spacing: 0.1rem;
+        }
+      `}
+    >
+      {children}
+    </h1>
+  );
+}
+
+function HeroSubtitle({ children }) {
+  return (
+    <h2
+      className={css`
+        font-weight: 400;
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        line-height: 2rem;
+        text-shadow: 0px 0px 8px black;
+        @media (max-width: ${breakpoints.large}) {
+          font-size: 1.6rem;
+          line-height: 1.6rem;
+        }
+        @media (max-width: ${breakpoints.small}) {
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+          letter-spacing: 0.1rem;
+        }
+      `}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function HeroButton({ onClick, href, children }) {
+  return (
+    <a
+      onClick={onClick}
+      href={href}
+      className={css`
+        display: inline-block;
+        border: 2px solid ${colors.secondaryTrans};
+        background-color: ${colors.primaryTrans};
+        padding: 8px 16px;
+        font-weight: 500;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        &:hover {
+          background-color: ${colors.secondaryDarker};
+          color: ${colors.white};
+        }
+        @media (max-width: ${breakpoints.large}) {
+          padding: 6px 16px;
+        }
+      `}
+    >
+      {children}
+    </a>
+  );
+}
+
 function HeroImage({ image, sectionRefs }) {
   const [loaded, setLoaded] = React.useState(false);
   const firstRun = React.useRef(true);
@@ -42,87 +144,16 @@ function HeroImage({ image, sectionRefs }) {
         }
       `}
     >
-      <div
-        className={css`
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 0 20px;
-          display: flex;
-          align-items: center;
-          height: 100%;
-        `}
-      >
-        <div
-          className={css`
-            width: 100%;
-          `}
+      <HeroContent>
+        <HeroTitle>ADAM RISBERG</HeroTitle>
+        <HeroSubtitle>Fullstack Developer</HeroSubtitle>
+        <HeroButton
+          onClick={handleLinkClick(sectionRefs.projects)}
+          href="#projects"
         >
-          <h1
-            className={css`
-              font-weight: 400;
-              letter-spacing: 0.5rem;
-              margin-bottom: 1rem;
-              font-size: 3rem;
-              line-height: 3rem;
-              text-shadow: 0px 0px 8px black;
-              @media (max-width: ${breakpoints.large}) {
-                font-size: 2.4rem;
-                line-height: 2.4rem;
-              }
-              @media (max-width: ${breakpoints.small}) {
-                font-size: 2rem;
-                line-height: 2rem;
-                letter-spacing: 0.1rem;
-              }
-            `}
-          >
-            ADAM RISBERG
-          </h1>
-          <h2
-            className={css`
-              font-weight: 400;
-              letter-spacing: 0.2rem;
-              font-size: 2rem;
-              line-height: 2rem;
-              text-shadow: 0px 0px 8px black;
-              @media (max-width: ${breakpoints.large}) {
-                font-size: 1.6rem;
-                line-height: 1.6rem;
-              }
-              @media (max-width: ${breakpoints.small}) {
-                font-size: 1.2rem;
-                line-height: 1.2rem;
-                letter-spacing: 0.1rem;
-              }
-            `}
-          >
-            Fullstack Web Developer
-          </h2>
-          <a
-            onClick={handleLinkClick(sectionRefs.projects)}
-            href="#projects"
-            className={css`
-              display: inline-block;
-              border: 2px solid ${colors.secondaryTrans};
-              background-color: ${colors.primaryTrans};
-              padding: 8px 16px;
-              font-weight: 500;
-              margin-top: 20px;
-              cursor: pointer;
-              transition: background-color 0.2s;
-              &:hover {
-                background-color: ${colors.secondaryDarker};
-                color: ${colors.white};
-              }
-              @media (max-width: ${breakpoints.large}) {
-                padding: 6px 16px;
-              }
-            `}
-          >
-            VIEW PORTFOLIO
-          </a>
-        </div>
-      </div>
+          VIEW PORTFOLIO
+        </HeroButton>
+      </HeroContent>
     </div>
   );
 }

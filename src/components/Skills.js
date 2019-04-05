@@ -1,11 +1,11 @@
 import React from "react";
 import { css } from "emotion";
-import { ListCard } from "./aboutCards";
 
+import { ListCard } from "./aboutCards";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
-import { about } from "../data";
+import skills from "../data/skills";
 import { breakpoints } from "../theme";
 
 const colStyle = css`
@@ -17,7 +17,9 @@ const colStyle = css`
   @media (max-width: ${breakpoints.large}) {
     width: 50%;
     margin-bottom: 0;
-    &:last-of-type { margin-bottom: 40px; }
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
   @media (max-width: ${breakpoints.small}) {
     width: 100%;
@@ -47,15 +49,12 @@ function Skills({ sectionRef }) {
         `}
       >
         <div className={colStyle}>
-          <ListCard title={"LANGUAGES"} list={about.languages} />
-          <ListCard
-            title={"FRONT END"}
-            list={about.frontEnd}
-          />
+          <ListCard title={"LANGUAGES"} list={skills.languages} />
+          <ListCard title={"FRONT END"} list={skills.frontEnd} />
         </div>
         <div className={colStyle}>
-          <ListCard title={"BACK END"} list={about.backEnd} />
-          <ListCard title={"TOOLS"} list={about.tools} />
+          <ListCard title={"BACK END"} list={skills.backEnd} />
+          <ListCard title={"TOOLS"} list={skills.tools} />
         </div>
         <div
           className={css`
@@ -74,12 +73,12 @@ function Skills({ sectionRef }) {
           <ListCard
             cardStyle={lastCardStyle}
             title={"MULTIMEDIA"}
-            list={about.multimedia}
+            list={skills.multimedia}
           />
           <ListCard
             cardStyle={lastCardStyle}
             title={"OTHER SKILLS"}
-            list={about.otherSkills}
+            list={skills.otherSkills}
           />
         </div>
       </div>

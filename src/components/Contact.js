@@ -45,7 +45,7 @@ function Contact({ sectionRef }) {
           className={css`
             width: 50%;
             padding-left: 4%;
-            transition: transform 1s .2s, opacity 1s .2s;
+            transition: transform 1s 0.2s, opacity 1s 0.2s;
             opacity: ${show ? "1" : "0"};
             transform: translateY(${show ? "0" : "200px"});
             padding-top: calc(1rem + 4px);
