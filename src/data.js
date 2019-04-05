@@ -89,7 +89,15 @@ export const projects = [
 
 const languages = ["Javascript", "C#"];
 
-const frontEnd = ["React", "React Router", "Redux", "HTML", "CSS", "SCSS"];
+const frontEnd = [
+  "React",
+  "React Router",
+  "Redux",
+  "HTML",
+  "CSS",
+  "SCSS",
+  "Emotion"
+];
 
 const backEnd = ["Node", "Express", "MYSQL", "MongoDB"];
 
@@ -120,13 +128,7 @@ const education = [
   "Deer River High School"
 ];
 
-const hobbies = [
-  "Fitness",
-  "Guitar",
-  "Music & Video Production",
-  "Video Games",
-  "TV & Movies"
-];
+const hobbies = ["Fitness", "Guitar", "Video Games", "TV, Movies, & Music"];
 
 const myJourneyParagraphs = [
   "I started my adventures in web development making simple, static websites in Dreamweaver for a few people here and there. I didn’t even know how to write the code, I just relied on the software. I was always interested in programming, but web development seemed like more of a design field. I was wrong, of course, but regardless, I ended up setting the web aside and started learning C# for software development.",
