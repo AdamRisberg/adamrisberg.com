@@ -24,6 +24,7 @@ export function HamburgerIcon() {
       width="34px"
       height="34px"
       viewBox="0 0 30 30"
+      focusable="false"
     >
       <path
         className={pathStyle}
@@ -41,6 +42,7 @@ export function LinkedInIcon({ width, height }) {
       width={width}
       height={height}
       viewBox="0 0 32 32"
+      focusable="false"
     >
       <path
         className={pathStyle}
@@ -61,6 +63,7 @@ export function GithubIcon({ width, height }) {
       width={width}
       height={height}
       viewBox="0 0 32 32"
+      focusable="false"
     >
       <path
         className={pathStyle}
@@ -83,6 +86,7 @@ export function CodePenIcon({ width, height }) {
       width={width}
       height={height}
       viewBox="0 0 32 32"
+      focusable="false"
     >
       <path
         className={pathStyle}
