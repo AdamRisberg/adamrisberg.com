@@ -40,23 +40,28 @@ const cardStyle = css`
   overflow: hidden;
   max-width: 420px;
   margin: 0 auto;
-  &:hover [data-project-content] {
+  &:hover [data-project-content],
+  &:focus [data-project-content] {
     opacity: 1;
     pointer-events: auto;
   }
-  &:hover [data-project-content] div:nth-of-type(1) {
+  &:hover [data-project-content] div:nth-of-type(1),
+  &:focus [data-project-content] div:nth-of-type(1) {
     transform: translateY(0);
     transition: transform 0.3s 0.5s;
   }
-  &:hover [data-project-content] div:nth-of-type(2) {
+  &:hover [data-project-content] div:nth-of-type(2),
+  &:focus [data-project-content] div:nth-of-type(2) {
     transform: translateY(0);
     transition: transform 0.3s 0.4s;
   }
-  &:hover [data-project-content] div:nth-of-type(3) {
+  &:hover [data-project-content] div:nth-of-type(3),
+  &:focus [data-project-content] div:nth-of-type(3) {
     transform: translateY(0);
     transition: transform 0.3s 0.3s;
   }
-  &:hover [data-project-content] div:nth-of-type(4) {
+  &:hover [data-project-content] div:nth-of-type(4),
+  &:focus [data-project-content] div:nth-of-type(4) {
     transform: translateY(0);
     transition: transform 0.3s 0.5s;
   }
@@ -70,7 +75,7 @@ const preTransformStyle = css`
 function ProjectCard({ className = "", title, type, tech, image, links = [] }) {
   return (
     <div className={className}>
-      <div className={cardStyle}>
+      <div tabIndex="0" className={cardStyle}>
         <img src={image} alt="React Cart" />
         <div className={contentStyle} data-project-content>
           <div
