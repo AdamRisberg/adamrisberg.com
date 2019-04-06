@@ -68,8 +68,10 @@ function CloseButton({ onClick, addMarginRight = 0 }) {
 
 function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
   const show = useBoolDelay(open, open ? 0 : 300);
+  const render = show || open;
+  const visible = show && open;
 
-  return (open || show) && (
+  return render && (
     <FocusLock>
       <nav
         tabIndex="-1"
@@ -83,11 +85,11 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
           display: flex;
           flex-direction: column;
           align-items: center;
-          transform: translateY(${(show && open) ? "0" : "-100%"});
+          transform: translateY(${visible ? "0" : "-100%"});
           transition: transform 0.3s ease-out;
         `}
       >
-        {(show && open) && (
+        {visible && (
           <CloseButton onClick={closeNav} addMarginRight={scrollBarWidth} />
         )}
         <div
@@ -99,7 +101,7 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
             justify-content: center;
           `}
         >
-          <NavList open={(show && open)}>
+          <NavList open={visible}>
             <NavItem
               className={liStyle}
               onClick={handleLinkClick(sectionRefs.projects, closeNav)}
@@ -128,7 +130,7 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
           <div
             className={css`
               text-align: center;
-              transform: translateY(${(show && open) ? "0" : "-1200px"});
+              transform: translateY(${visible ? "0" : "-1200px"});
               transition: transform 0.3s 0.2s;
               & a {
                 margin: 0 12px;
