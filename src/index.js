@@ -1,6 +1,7 @@
 import * as serviceWorker from "./serviceWorker";
 import "es6-promise/auto";
 import "es6-object-assign/auto";
+import findPolyfill from "array.prototype.find";
 import smoothscroll from "smoothscroll-polyfill";
 
 import React from "react";
@@ -19,6 +20,7 @@ import { breakpoints, colors } from "./theme";
 import { useModalNav } from "./utils";
 
 smoothscroll.polyfill();
+findPolyfill.shim();
 
 injectGlobal`
   * {
@@ -84,14 +86,12 @@ function App() {
       <About sectionRef={aboutSectionRef} />
       <Contact sectionRef={contactSectionRef} />
       <Footer />
-      {/* <FocusLock returnFocus> */}
-        <MobileNav
-          open={navOpen}
-          closeNav={() => setNavOpen(false)}
-          sectionRefs={sectionRefs}
-          scrollBarWidth={scrollBarWidth}
-        />
-      {/* </FocusLock> */}
+      <MobileNav
+        open={navOpen}
+        closeNav={() => setNavOpen(false)}
+        sectionRefs={sectionRefs}
+        scrollBarWidth={scrollBarWidth}
+      />
     </React.Fragment>
   );
 }

@@ -31,6 +31,7 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
       <HamburgerButton onClick={openNav} show={showHamburger} />
       <ul
         className={css`
+          flex-grow: 1;
           @media (max-width: ${breakpoints.large}) {
             display: none;
           }
