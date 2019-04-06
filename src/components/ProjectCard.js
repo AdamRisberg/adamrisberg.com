@@ -10,6 +10,7 @@ const contentStyle = css`
   left: 0;
   right: 0;
   bottom: 0;
+  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -24,7 +25,7 @@ const contentStyle = css`
 const buttonStyle = css`
   ${styles.buttonPrimary}
   border-width: 1px;
-  padding: 4px 12px;
+  padding: 3px 12px;
   font-size: 0.9rem;
   margin: 10px 10px 0 0;
   &:last-of-type {
@@ -91,6 +92,7 @@ function ProjectCard({ className = "", title, type, tech, image, links = [] }) {
           >
             {links.map(link => (
               <a
+                aria-label={`${title} ${link.title}`}
                 key={`${title}-${link.title}`}
                 href={link.href}
                 className={buttonStyle}

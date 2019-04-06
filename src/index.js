@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import MobileNav from "./components/MobileNav";
 
 import { breakpoints, colors } from "./theme";
+import { useModalNav } from "./utils";
 
 smoothscroll.polyfill();
 
@@ -56,7 +57,7 @@ injectGlobal`
 `;
 
 function App() {
-  const [navOpen, setNavOpen] = React.useState(false);
+  const [navOpen, setNavOpen, scrollBarWidth] = useModalNav();
 
   const projectSectionRef = React.useRef();
   const skillSectionRef = React.useRef();
@@ -83,11 +84,14 @@ function App() {
       <About sectionRef={aboutSectionRef} />
       <Contact sectionRef={contactSectionRef} />
       <Footer />
-      <MobileNav
-        open={navOpen}
-        closeNav={() => setNavOpen(false)}
-        sectionRefs={sectionRefs}
-      />
+      {/* <FocusLock returnFocus> */}
+        <MobileNav
+          open={navOpen}
+          closeNav={() => setNavOpen(false)}
+          sectionRefs={sectionRefs}
+          scrollBarWidth={scrollBarWidth}
+        />
+      {/* </FocusLock> */}
     </React.Fragment>
   );
 }

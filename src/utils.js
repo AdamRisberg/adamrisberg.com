@@ -21,6 +21,24 @@ export function useInView(ref, offset) {
   return inView;
 }
 
+export function useModalNav() {
+  const [navOpen, setNavOpen] = React.useState(false);
+  const bodyRef = React.useRef(document.querySelector("body"));
+  const scrollBarWidth = window.outerWidth - window.innerWidth;
+
+  React.useEffect(() => {
+    if (navOpen) {
+      bodyRef.current.style.overflow = "hidden";
+      bodyRef.current.style.paddingRight = `${scrollBarWidth}px`;
+    } else {
+      bodyRef.current.style.overflow = "auto";
+      bodyRef.current.style.paddingRight = "0";
+    }
+  }, [navOpen]);
+
+  return [navOpen, setNavOpen, navOpen ? scrollBarWidth : 0];
+}
+
 function checkInView(el, offset, cb, doneRef) {
   const scrollY = window.scrollY || window.pageYOffset;
   const viewBottom = scrollY + window.innerHeight;
@@ -30,6 +48,18 @@ function checkInView(el, offset, cb, doneRef) {
     doneRef.current = true;
     cb(true);
   }
+}
+
+export function useBoolDelay(bool, delayInMs) {
+  const [delayedBool, setDelayedBool] = React.useState(bool);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setDelayedBool(bool);
+    }, delayInMs);
+  }, [bool]);
+
+  return delayedBool;
 }
 
 export function handleLinkClick(ref, cb) {

@@ -12,6 +12,7 @@
     "lodash.throttle": "^4.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-focus-lock": "^1.18.3",
     "react-scripts": "2.1.8",
     "smoothscroll-polyfill": "^0.4.4"
   },

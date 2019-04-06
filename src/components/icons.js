@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { breakpoints, colors } from "../theme";
+import { colors } from "../theme";
 
 const svgStyle = css`
   cursor: pointer;
@@ -16,26 +16,14 @@ const pathStyle = css`
   transition: fill 0.2s;
 `;
 
-export function HamburgerIcon({ onClick }) {
+export function HamburgerIcon() {
   return (
     <svg
-      className={css`
-        ${svgStyle}
-        display: none;
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        z-index: 999;
-        transition: opacity 0.3s;
-        @media (max-width: ${breakpoints.large}) {
-          display: block;
-        }
-      `}
+      className={svgStyle}
       xmlns="http://www.w3.org/2000/svg"
       width="34px"
       height="34px"
       viewBox="0 0 30 30"
-      onClick={onClick}
     >
       <path
         className={pathStyle}

@@ -50,5 +50,10 @@ export const styles = {
       cursor: not-allowed;
       background-color: ${colors.secondaryDarker};
     }
+  `,
+  blankButton: css`
+    padding: 0;
+    background-color: ${colors.background};
+    border: none;
   `
 };

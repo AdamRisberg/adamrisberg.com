@@ -1,11 +1,12 @@
 import React from "react";
 import { css } from "emotion";
+import FocusLock from "react-focus-lock";
 
 import SocialLink from "./SocialLink";
 import NavItem from "./NavItem";
 
-import { colors } from "../theme";
-import { handleLinkClick } from "../utils";
+import { colors, styles } from "../theme";
+import { handleLinkClick, useBoolDelay } from "../utils";
 
 const liStyle = css`
   list-style: none;
@@ -41,16 +42,18 @@ function NavList({ open, children }) {
   );
 }
 
-function CloseButton({ onClick }) {
+function CloseButton({ onClick, addMarginRight = 0 }) {
   return (
-    <div
+    <button
       className={css`
+        ${styles.blankButton}
+        color: ${colors.text};
         font-size: 1.8rem;
         line-height: 1.8rem;
         margin-top: 8px;
         cursor: pointer;
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: ${25 + addMarginRight}px;
         transition: color 0.2s;
         &:hover {
           color: ${colors.secondary};
@@ -59,94 +62,101 @@ function CloseButton({ onClick }) {
       onClick={onClick}
     >
       &#10005;
-    </div>
+    </button>
   );
 }
 
-function MobileNav({ open, closeNav, sectionRefs }) {
-  return (
-    <nav
-      className={css`
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-color: ${colors.background};
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translateY(${open ? "0" : "-100%"});
-        transition: transform 0.3s ease-out;
-      `}
-    >
-      <CloseButton onClick={closeNav} />
-      <div
+function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
+  const show = useBoolDelay(open, open ? 0 : 300);
+
+  return (open || show) && (
+    <FocusLock>
+      <nav
+        tabIndex="-1"
         className={css`
-          margin-top: -20px;
-          flex-grow: 1;
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: ${colors.background};
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          align-items: center;
+          transform: translateY(${(show && open) ? "0" : "-100%"});
+          transition: transform 0.3s ease-out;
         `}
       >
-        <NavList open={open}>
-          <NavItem
-            className={liStyle}
-            onClick={handleLinkClick(sectionRefs.projects, closeNav)}
-            href="#projects"
-            label="PORTFOLIO"
-          />
-          <NavItem
-            className={liStyle}
-            onClick={handleLinkClick(sectionRefs.skills, closeNav)}
-            href="#skills"
-            label="SKILLS"
-          />
-          <NavItem
-            className={liStyle}
-            onClick={handleLinkClick(sectionRefs.about, closeNav)}
-            href="#about"
-            label="ABOUT"
-          />
-          <NavItem
-            className={liStyle}
-            onClick={handleLinkClick(sectionRefs.contact, closeNav)}
-            href="#contact"
-            label="CONTACT"
-          />
-        </NavList>
+        {(show && open) && (
+          <CloseButton onClick={closeNav} addMarginRight={scrollBarWidth} />
+        )}
         <div
           className={css`
-            text-align: center;
-            transform: translateY(${open ? "0" : "-1200px"});
-            transition: transform 0.3s 0.2s;
-            & a {
-              margin: 0 12px;
-            }
+            margin-top: -20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
           `}
         >
-          <SocialLink
-            type="LinkedIn"
-            href="https://www.linkedin.com/in/adamrisberg"
-            width="24px"
-            height="24px"
-          />
-          <SocialLink
-            type="Github"
-            href="https://github.com/myniztan"
-            width="24px"
-            height="24px"
-          />
-          <SocialLink
-            type="CodePen"
-            href="https://codepen.io/myniztan"
-            width="24px"
-            height="24px"
-          />
+          <NavList open={(show && open)}>
+            <NavItem
+              className={liStyle}
+              onClick={handleLinkClick(sectionRefs.projects, closeNav)}
+              href="#projects"
+              label="PORTFOLIO"
+            />
+            <NavItem
+              className={liStyle}
+              onClick={handleLinkClick(sectionRefs.skills, closeNav)}
+              href="#skills"
+              label="SKILLS"
+            />
+            <NavItem
+              className={liStyle}
+              onClick={handleLinkClick(sectionRefs.about, closeNav)}
+              href="#about"
+              label="ABOUT"
+            />
+            <NavItem
+              className={liStyle}
+              onClick={handleLinkClick(sectionRefs.contact, closeNav)}
+              href="#contact"
+              label="CONTACT"
+            />
+          </NavList>
+          <div
+            className={css`
+              text-align: center;
+              transform: translateY(${(show && open) ? "0" : "-1200px"});
+              transition: transform 0.3s 0.2s;
+              & a {
+                margin: 0 12px;
+              }
+            `}
+          >
+            <SocialLink
+              type="LinkedIn"
+              href="https://www.linkedin.com/in/adamrisberg"
+              width="24px"
+              height="24px"
+            />
+            <SocialLink
+              type="Github"
+              href="https://github.com/myniztan"
+              width="24px"
+              height="24px"
+            />
+            <SocialLink
+              type="CodePen"
+              href="https://codepen.io/myniztan"
+              width="24px"
+              height="24px"
+            />
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </FocusLock>
   );
 }
 

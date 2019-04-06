@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { HamburgerIcon } from "./icons";
+import HamburgerButton from "./HamburgerButton";
 import SocialLink from "./SocialLink";
 import NavItem from "./NavItem";
 
@@ -28,7 +28,7 @@ const navItemStyle = css`
 function MainNav({ openNav, showHamburger, sectionRefs }) {
   return (
     <nav className={navStyle}>
-      {showHamburger && <HamburgerIcon onClick={openNav} />}
+      <HamburgerButton onClick={openNav} show={showHamburger} />
       <ul
         className={css`
           @media (max-width: ${breakpoints.large}) {
