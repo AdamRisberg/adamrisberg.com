@@ -4,6 +4,7 @@ import FocusLock from "react-focus-lock";
 
 import SocialLink from "./SocialLink";
 import NavItem from "./NavItem";
+import Modal from "./Modal";
 
 import { colors, styles } from "../theme";
 import { handleLinkClick, useBoolDelay } from "../utils";
@@ -71,28 +72,23 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
   const render = show || open;
   const visible = show && open;
 
-  return render && (
+  if (!render) {
+    return null;
+  }
+
+  return (
     <FocusLock>
-      <nav
-        tabIndex="-1"
+      <Modal
         className={css`
-          position: fixed;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          background-color: ${colors.background};
-          display: flex;
-          flex-direction: column;
-          align-items: center;
           transform: translateY(${visible ? "0" : "-100%"});
           transition: transform 0.3s ease-out;
         `}
+        show={visible}
       >
         {visible && (
           <CloseButton onClick={closeNav} addMarginRight={scrollBarWidth} />
         )}
-        <div
+        <nav
           className={css`
             margin-top: -20px;
             flex-grow: 1;
@@ -156,8 +152,8 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
               height="24px"
             />
           </div>
-        </div>
-      </nav>
+        </nav>
+      </Modal>
     </FocusLock>
   );
 }
