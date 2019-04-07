@@ -66,7 +66,7 @@ const cardStyle = css`
   }
   &.focus [data-project-content] div {
     transform: translateY(0);
-    transition: none;
+    transition: transform 0.2s;
   }
 `;
 
