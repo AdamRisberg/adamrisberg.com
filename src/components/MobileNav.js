@@ -67,7 +67,7 @@ function CloseButton({ onClick, addMarginRight = 0 }) {
 }
 
 function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
-  const show = useBoolDelay(open, open ? 0 : 300);
+  const show = useBoolDelay(open, 0, 300);
   const render = show || open;
   const visible = show && open;
 

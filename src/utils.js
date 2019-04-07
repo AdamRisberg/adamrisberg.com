@@ -50,13 +50,16 @@ function checkInView(el, offset, cb, doneRef) {
   }
 }
 
-export function useBoolDelay(bool, delayInMs) {
+export function useBoolDelay(bool, trueDelay, falseDelay) {
   const [delayedBool, setDelayedBool] = React.useState(bool);
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setDelayedBool(bool);
-    }, delayInMs);
+    setTimeout(
+      () => {
+        setDelayedBool(bool);
+      },
+      bool ? trueDelay : falseDelay
+    );
   }, [bool]);
 
   return delayedBool;
@@ -66,7 +69,8 @@ export function handleLinkClick(ref, cb) {
   return e => {
     e.preventDefault();
     const targetY = ref.current.getBoundingClientRect().top;
-    window.scrollTo({ top: targetY, behavior: "smooth" });
+    const scrollY = window.scrollY || window.pageYOffset;
+    window.scrollTo({ top: targetY + scrollY, behavior: "smooth" });
     cb && cb();
   };
 }

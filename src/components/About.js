@@ -1,53 +1,32 @@
 import React from "react";
 import { css } from "emotion";
 
-import { ListCard, TextCard } from "./aboutCards";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
 import about from "../data/about";
 import { breakpoints } from "../theme";
 
-const cardListStyle = css`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -10px 0 -10px;
-`;
-
-const colStyle = css`
-  width: 50%;
-  padding: 0 10px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: ${breakpoints.small}) {
-    width: 100%;
-    &:first-of-type {
-      margin-bottom: 0;
-    }
-  }
-`;
-
-function CardList({ children }) {
-  return (
-    <div className={cardListStyle}>
-      {React.Children.map(children, child => (
-        <div className={colStyle}>{child}</div>
-      ))}
-    </div>
-  );
-}
-
 function About({ sectionRef }) {
   return (
-    <Section sectionRef={sectionRef} marginBottom="0" id="about">
+    <Section sectionRef={sectionRef} id="about">
       <SectionTitle text="ABOUT" />
-      <TextCard title="MY JOURNEY" paragraphs={about.myJourneyParagraphs} />
-      <CardList>
-        <ListCard title={"EDUCATION"} list={about.education} />
-        <ListCard title={"HOBBIES"} list={about.hobbies} />
-      </CardList>
+      <div
+        className={css`
+          & p {
+            margin-bottom: 20px;
+            text-align: left;
+            transition: transform 1s, opacity 1s;
+          }
+          @media (max-width: ${breakpoints.extraSmall}) {
+            padding: 0 10px;
+          }
+        `}
+      >
+        {about.myJourneyParagraphs.map(p => (
+          <p key={p.substr(0, 10)}>{p}</p>
+        ))}
+      </div>
     </Section>
   );
 }
