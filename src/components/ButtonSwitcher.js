@@ -4,6 +4,7 @@ import { css } from "emotion";
 import { colors, breakpoints } from "../theme";
 
 const buttonStyle = css`
+  min-width: 125px;
   padding: 6px 15px;
   font-weight: 500;
   font-size: 1.1rem;

@@ -17,7 +17,7 @@ function Portfolio({ sectionRef }) {
   return (
     <Section sectionRef={sectionRef} id="projects">
       <SectionTitle text="PORTFOLIO" marginBottom="20px" />
-      <ButtonSwitcher labels={["Web Projects", "Resume"]}>
+      <ButtonSwitcher labels={["Projects", "Resume"]}>
         <div
           className={css`
             display: flex;
