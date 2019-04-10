@@ -46,6 +46,7 @@ function NavList({ open, children }) {
 function CloseButton({ onClick, addMarginRight = 0 }) {
   return (
     <button
+      aria-label="Close"
       className={css`
         ${styles.blankButton}
         color: ${colors.text};

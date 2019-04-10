@@ -7,6 +7,7 @@ import { breakpoints, styles } from "../theme";
 function HamburgerButton({ onClick, show }) {
   return (
     <button
+      aria-label="Menu"
       className={css`
         ${styles.blankButton}
         position: absolute;
