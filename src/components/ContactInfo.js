@@ -34,13 +34,14 @@ function ContactInfo() {
       </div>
       <a
         className={css`
-          display: block;
+          display: inline-block;
           margin-bottom: 30px;
         `}
         href="mailto:myniztan@hotmail.com"
       >
         myniztan@hotmail.com
       </a>
+      <br />
       <SocialLink
         className={anchorStyle}
         type="LinkedIn"

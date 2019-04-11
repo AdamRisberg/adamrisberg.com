@@ -151,7 +151,7 @@ function MainSection({ title, skills, showBullet }) {
         padding-bottom: 10px;
         & a,
         & a:visited {
-          display: block;
+          display: inline-block;
           color: black;
           font-weight: bold;
           margin-bottom: 4px;

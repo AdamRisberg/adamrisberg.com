@@ -16,10 +16,34 @@ const pathStyle = css`
   transition: fill 0.2s;
 `;
 
+export function CloseIcon() {
+  return (
+    <svg
+      className={css`
+        margin-bottom: -4px;
+        & line {
+          stroke: ${colors.text};
+          stroke-width: 2.5;
+          transition: stroke 0.2s;
+        }
+      `}
+      xmlns="http://www.w3.org/2000/svg"
+      width="20px"
+      height="20px"
+      viewBox="0 0 20 20"
+      focusable="false"
+    >
+      <line x1="0" y1="0" x2="20" y2="20" />
+      <line x1="0" y1="20" x2="20" y2="0" />
+    </svg>
+  );
+}
+
 export function HamburgerIcon() {
   return (
     <svg
       className={svgStyle}
+      style={{ marginBottom: "-6px" }}
       xmlns="http://www.w3.org/2000/svg"
       width="34px"
       height="34px"

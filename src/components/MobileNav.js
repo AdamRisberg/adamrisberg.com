@@ -5,13 +5,13 @@ import FocusLock from "react-focus-lock";
 import SocialLink from "./SocialLink";
 import NavItem from "./NavItem";
 import Modal from "./Modal";
+import { CloseIcon } from "./icons";
 
 import { colors, styles } from "../theme";
 import { handleLinkClick, useBoolDelay } from "../utils";
 
 const liStyle = css`
   list-style: none;
-  margin: 0;
   text-align: center;
   font-size: 1.5rem;
   margin: 5px 0;
@@ -50,20 +50,19 @@ function CloseButton({ onClick, addMarginRight = 0 }) {
       className={css`
         ${styles.blankButton}
         color: ${colors.text};
-        font-size: 1.8rem;
-        line-height: 1.8rem;
         margin-top: 8px;
+        padding: 4px 6px;
         cursor: pointer;
         margin-left: auto;
-        margin-right: ${25 + addMarginRight}px;
+        margin-right: ${21 + addMarginRight}px;
         transition: color 0.2s;
-        &:hover {
-          color: ${colors.secondary};
+        &:hover line {
+          stroke: ${colors.secondary};
         }
       `}
       onClick={onClick}
     >
-      &#10005;
+      <CloseIcon />
     </button>
   );
 }

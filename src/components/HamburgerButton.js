@@ -12,7 +12,8 @@ function HamburgerButton({ onClick, show }) {
         ${styles.blankButton}
         position: absolute;
         top: 5px;
-        right: 20px;
+        right: 16px;
+        padding: 0 4px;
         z-index: 999;
         visibility: hidden;
         opacity: 0;
