@@ -42,9 +42,14 @@ export const styles = {
     cursor: pointer;
     transition: background-color 0.2s;
     color: ${colors.text};
-    &:hover {
+    &:hover,
+    &:active {
       background-color: ${colors.secondaryDarker};
       color: ${colors.white};
+    }
+    &:active {
+      border-color: ${colors.secondary};
+      box-shadow: inset 0 0 8px ${colors.secondary};
     }
     &:disabled {
       cursor: not-allowed;
