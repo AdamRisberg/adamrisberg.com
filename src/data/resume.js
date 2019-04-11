@@ -3,12 +3,12 @@ import React from "react";
 const resumeWorkHistory = [
   {
     title: "Freelance Web Development, 2016-Present",
-    description: "Specializing in React and Node based websites."
+    description: "Full-stack development, specializing in React and Node based websites."
   },
   {
     title: "Freelance Programmer & Computer Technician, 2011-2016",
     description:
-      "Custom programming, static websites, computer repair, and technical support."
+      "Custom programming (Windows software), static websites, computer repair, and technical support."
   }
 ];
 
@@ -20,7 +20,7 @@ const resumeWebProjects = [
       href: "https://www.onlymusicfolders.com"
     },
     description:
-      "Opencart installation, customized to handle special product option requirements and to allow integration with the company's business software. (Opencart, PHP, MySQL)"
+      "Installed, configured, and customized OpenCart. Wrote extensions and tweaked source code to handle special product option requirements, fit their workflow, and allow integration with the company's business software. (OpenCart, PHP, MYSQL)"
   },
   {
     title: "Deer River Folio Website",
@@ -38,7 +38,7 @@ const resumeWebProjects = [
       href: "https://www.cart.adamrisberg.com"
     },
     description:
-      "An open source React and Express based shopping cart system. Similar to Opencart, Magento, etc. (React, Express, MongoDB)"
+      "An open source React and Express based shopping cart system. Similar to Magento, OpenCart, etc. (React, Express, MongoDB)"
   },
   {
     title: "React Input Position",
@@ -67,7 +67,7 @@ const resumeWindowsProjects = [
       "Business software including accounting, payroll, orders, inventory, etc. Worked closely with the company to automate everything possible and tailor the software to their desired workflow. (C#, WPF, MYSQL)"
   },
   {
-    title: "Deer River Folio Timeclock Software",
+    title: "Deer River Folio Time Clock Software",
     description:
       "Windows software allowing employees to clock in/out and request vacation days. (C#, WPF, MYSQL)"
   }
@@ -77,7 +77,7 @@ const resumeEducation = [
   {
     title: "College",
     description:
-      "AA - Digital Animation Production - Univerity of Advancing Technologies"
+      "AA - Digital Animation Production - University of Advancing Technologies"
   },
   {
     title: "Highschool",
@@ -155,7 +155,7 @@ const resumeAdditionalLinks = [
 
 export default {
   description:
-    "A Full-stack Web Developer with a background in windows programming. Specializing in React and Node based web apps. A hard worker who is always excited to learn and face new challenges.",
+    "A Full-stack Web Developer with a background in windows programming, specializing in React and Node based web apps. A hard worker who is always excited to learn and face new challenges.",
   mainSections: [
     {
       title: "WORK HISTORY",

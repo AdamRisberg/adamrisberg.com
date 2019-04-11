@@ -137,7 +137,7 @@ function HeroImage({ image, sectionRefs }) {
     >
       <HeroContent>
         <HeroTitle>ADAM RISBERG</HeroTitle>
-        <HeroSubtitle>Fullstack Developer</HeroSubtitle>
+        <HeroSubtitle>Full-stack Developer</HeroSubtitle>
         <HeroButton
           onClick={handleLinkClick(sectionRefs.projects)}
           href="#projects"
