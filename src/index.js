@@ -81,10 +81,12 @@ function App() {
         showHamburger={!navOpen}
         sectionRefs={sectionRefs}
       />
-      <Portfolio sectionRef={projectSectionRef} />
-      <Skills sectionRef={skillSectionRef} />
-      <About sectionRef={aboutSectionRef} />
-      <Contact sectionRef={contactSectionRef} />
+      <main>
+        <Portfolio sectionRef={projectSectionRef} />
+        <Skills sectionRef={skillSectionRef} />
+        <About sectionRef={aboutSectionRef} />
+        <Contact sectionRef={contactSectionRef} />
+      </main>
       <Footer />
       <MobileNav
         open={navOpen}

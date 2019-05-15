@@ -80,13 +80,13 @@ function MainNav({ openNav, showHamburger, sectionRefs }) {
         />
         <SocialLink
           type="Github"
-          href="https://github.com/myniztan"
+          href="https://github.com/adamrisberg"
           width="20px"
           height="20px"
         />
         <SocialLink
           type="CodePen"
-          href="https://codepen.io/myniztan"
+          href="https://codepen.io/adamrisberg"
           width="20px"
           height="20px"
         />

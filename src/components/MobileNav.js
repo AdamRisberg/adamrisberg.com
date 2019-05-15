@@ -141,13 +141,13 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
             />
             <SocialLink
               type="Github"
-              href="https://github.com/myniztan"
+              href="https://github.com/adamrisberg"
               width="24px"
               height="24px"
             />
             <SocialLink
               type="CodePen"
-              href="https://codepen.io/myniztan"
+              href="https://codepen.io/adamrisberg"
               width="24px"
               height="24px"
             />

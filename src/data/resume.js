@@ -3,7 +3,8 @@ import React from "react";
 const resumeWorkHistory = [
   {
     title: "Freelance Web Development, 2016-Present",
-    description: "Full-stack development, specializing in React and Node based websites."
+    description:
+      "Full-stack development, specializing in React and Node based websites."
   },
   {
     title: "Freelance Programmer & Computer Technician, 2011-2016",
@@ -43,8 +44,8 @@ const resumeWebProjects = [
   {
     title: "React Input Position",
     link: {
-      label: "myniztan.github.io/react-input-position",
-      href: "https://myniztan.github.io/react-input-position"
+      label: "adamrisberg.github.io/react-input-position",
+      href: "https://adamrisberg.github.io/react-input-position"
     },
     description:
       "An open source React component that decorates it's children with mouse/touch position tracking and a status toggle fired by click/gesture events. (React)"
@@ -52,8 +53,8 @@ const resumeWebProjects = [
   {
     title: "React Image Magnifiers",
     link: {
-      label: "myniztan.github.io/react-image-magnifiers",
-      href: "https://myniztan.github.io/react-image-magnifiers"
+      label: "adamrisberg.github.io/react-image-magnifiers",
+      href: "https://adamrisberg.github.io/react-image-magnifiers"
     },
     description:
       "An open source collection of responsive, image magnifying React components with mouse and touch interactions. (React)"
@@ -145,11 +146,11 @@ const resumeAdditionalLinks = [
   },
   {
     key: "Github-link",
-    description: <a href="https://github.com/myniztan">Github</a>
+    description: <a href="https://github.com/adamrisberg">Github</a>
   },
   {
     key: "CodePen-link",
-    description: <a href="https://codepen.io/myniztan">CodePen</a>
+    description: <a href="https://codepen.io/adamrisberg">CodePen</a>
   }
 ];
 

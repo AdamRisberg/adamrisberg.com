@@ -11,7 +11,7 @@ export const webProjects = [
       },
       {
         title: "Github",
-        href: "https://github.com/myniztan/react-express-cart"
+        href: "https://github.com/adamrisberg/react-express-cart"
       }
     ]
   },
@@ -47,11 +47,11 @@ export const webProjects = [
     links: [
       {
         title: "Demo Site",
-        href: "https://myniztan.github.io/react-image-magnifiers"
+        href: "https://adamrisberg.github.io/react-image-magnifiers"
       },
       {
         title: "Github",
-        href: "https://github.com/myniztan/react-image-magnifiers"
+        href: "https://github.com/adamrisberg/react-image-magnifiers"
       }
     ]
   },
@@ -63,11 +63,11 @@ export const webProjects = [
     links: [
       {
         title: "Demo Site",
-        href: "https://myniztan.github.io/react-input-position"
+        href: "https://adamrisberg.github.io/react-input-position"
       },
       {
         title: "Github",
-        href: "https://github.com/myniztan/react-input-position"
+        href: "https://github.com/adamrisberg/react-input-position"
       }
     ]
   },
@@ -79,7 +79,7 @@ export const webProjects = [
     links: [
       {
         title: "Github",
-        href: "https://github.com/myniztan/adamrisberg.com"
+        href: "https://github.com/adamrisberg/adamrisberg.com"
       }
     ]
   }

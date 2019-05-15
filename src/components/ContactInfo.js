@@ -52,14 +52,14 @@ function ContactInfo() {
       <SocialLink
         className={anchorStyle}
         type="Github"
-        href="https://github.com/myniztan"
+        href="https://github.com/adamrisberg"
         width="32px"
         height="32px"
       />
       <SocialLink
         className={anchorStyle}
         type="CodePen"
-        href="https://codepen.io/myniztan"
+        href="https://codepen.io/adamrisberg"
         width="32px"
         height="32px"
       />
