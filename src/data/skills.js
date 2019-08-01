@@ -28,7 +28,7 @@ const multimedia = [
   "Maya"
 ];
 
-const otherSkills = ["NPM", "Webpack", "Data Structures", "Algorithms"];
+const otherSkills = ["Jest", "Babel", "Webpack", "NPM"];
 
 export default {
   languages,

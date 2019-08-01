@@ -12,10 +12,9 @@ const education = [
 const hobbies = ["Fitness", "Guitar", "Video Games", "TV, Movies, & Music"];
 
 const myJourneyParagraphs = [
-  "I started my adventures in web development making simple, static websites in Dreamweaver for a few people here and there. I didn’t even know how to write the code, I just relied on the software. I was always interested in programming, but web development seemed like more of a design field. I was wrong, of course, but regardless, I ended up setting the web aside and started learning C# for software development.",
-  "Shortly after that, a company that I had worked for in the past found out I was getting into programming and asked if I could make them business software to replace their old, obsolete DOS programs. Orders, accounting, payroll, etc. I knew it was going to be a massive undertaking, and a lot to learn, but I took on the challenge. After way too many sleepless nights, the project was a success, and ended up being the first of many projects for that company.",
-  "Eventually, I was hired to create another website. This time, more complex than anything I had created in the past. I decided it was time to drop Dreamweaver and finally start actually learning HTML, CSS, and JavaScript. This changed everything. As I learned more and more, I started discovering things like React, Node.js, Express, etc. I quickly fell in love with the complexity, fast pace, and seemingly limitless possibilities that I didn’t know existed in web development. There’s always something new to learn.",
-  "With my interest now peaked, I continued taking every course I could find online, working through tutorials, watching conferences, etc. It quickly became my primary focus and passion, where I continue learning every day and seeking out new challenges."
+  "Hi, my name is Adam. I’m a web developer based in Texas.",
+  "I grew up in Minnesota where I worked as a freelance software developer. After taking on several programming jobs, including a massive project creating business software for a local company, I decided to start learning web development. The more I learned, the more I realized how fun and exciting it had become. Many different types of complex applications that could have only existed as desktop software in the past were now possible on the web. I started imagining what the future could bring and the possibilities seemed endless. I knew at that moment, that I wanted to become a part of this constantly growing and evolving field.",
+  "Web development quickly become my primary focus and passion, where I continue learning every day and seeking out new challenges."
 ];
 
 export default {

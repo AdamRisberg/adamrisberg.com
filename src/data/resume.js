@@ -116,7 +116,7 @@ const resumeSkills = [
   },
   {
     title: "Other",
-    description: "C#, WPF"
+    description: "Jest, C#, WPF"
   }
 ];
 
@@ -156,7 +156,7 @@ const resumeAdditionalLinks = [
 
 export default {
   description:
-    "A Full-stack Web Developer with a background in windows programming, specializing in React and Node based web apps. A hard worker who is always excited to learn and face new challenges.",
+    "Full-stack Web Developer, specializing in React and Node based web apps with a background in windows software development. A hard worker who is always excited to learn and face new challenges.",
   mainSections: [
     {
       title: "WORK HISTORY",
