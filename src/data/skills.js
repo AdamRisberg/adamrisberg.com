@@ -7,7 +7,7 @@ const frontEnd = [
   "HTML",
   "CSS",
   "SCSS",
-  "Emotion"
+  "jQuery"
 ];
 
 const backEnd = ["Node", "Express", "MYSQL", "MongoDB"];

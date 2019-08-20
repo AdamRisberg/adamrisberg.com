@@ -7,7 +7,7 @@ const resumeWorkHistory = [
       "Full-stack development, specializing in React and Node based websites."
   },
   {
-    title: "Freelance Programmer & Computer Technician, 2011-2016",
+    title: "Freelance Programmer & Computer Technician, 2011-2018",
     description:
       "Custom programming (Windows software), static websites, computer repair, and technical support."
   }
@@ -21,7 +21,7 @@ const resumeWebProjects = [
       href: "https://www.onlymusicfolders.com"
     },
     description:
-      "Installed, configured, and customized OpenCart. Wrote extensions and tweaked source code to handle special product option requirements, fit their workflow, and allow integration with the company's business software. (OpenCart, PHP, MYSQL)"
+      "Installed, configured, and customized OpenCart. Wrote extensions and tweaked source code to handle product option requirements, fit their workflow, and allow integration with the company's business software. (OpenCart, PHP, MYSQL)"
   },
   {
     title: "Deer River Folio Website",
@@ -98,6 +98,20 @@ const resumePersonalInfo = [
   {
     title: "Portfolio",
     description: <a href="http://www.adamrisberg.com">www.adamrisberg.com</a>
+  },
+  {
+    title: "LinkedIn",
+    description: (
+      <a href="https://www.linkedin.com/in/adamrisberg">
+        linkedin.com/in/adamrisberg
+      </a>
+    )
+  },
+  {
+    title: "Github",
+    description: (
+      <a href="https://github.com/adamrisberg">github.com/adamrisberg</a>
+    )
   }
 ];
 
@@ -139,21 +153,6 @@ const resumeTools = [
   }
 ];
 
-const resumeAdditionalLinks = [
-  {
-    key: "LinkedIn-link",
-    description: <a href="https://www.linkedin.com/in/adamrisberg">LinkedIn</a>
-  },
-  {
-    key: "Github-link",
-    description: <a href="https://github.com/adamrisberg">Github</a>
-  },
-  {
-    key: "CodePen-link",
-    description: <a href="https://codepen.io/adamrisberg">CodePen</a>
-  }
-];
-
 export default {
   description:
     "Full-stack Web Developer, specializing in React and Node based web apps with a background in windows software development. A hard worker who is always excited to learn and face new challenges.",
@@ -187,10 +186,6 @@ export default {
     {
       title: "TOOLS",
       skills: resumeTools
-    },
-    {
-      title: "ADDITIONAL LINKS",
-      skills: resumeAdditionalLinks
     }
   ]
 };
