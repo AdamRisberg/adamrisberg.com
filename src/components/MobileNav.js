@@ -50,11 +50,11 @@ function CloseButton({ onClick, addMarginRight = 0 }) {
       className={css`
         ${styles.blankButton}
         color: ${colors.text};
-        margin-top: 8px;
+        position: fixed;
         padding: 4px 6px;
         cursor: pointer;
-        margin-left: auto;
-        margin-right: ${21 + addMarginRight}px;
+        top: 8px;
+        right: ${21 + addMarginRight}px;
         transition: color 0.2s;
         &:hover line {
           stroke: ${colors.secondary};
@@ -77,7 +77,7 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
   }
 
   return (
-    <FocusLock>
+    <FocusLock autoFocus={false}>
       <Modal
         className={css`
           transform: translateY(${visible ? "0" : "-100%"});
@@ -90,7 +90,6 @@ function MobileNav({ open, closeNav, sectionRefs, scrollBarWidth }) {
         )}
         <nav
           className={css`
-            margin-top: -20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
