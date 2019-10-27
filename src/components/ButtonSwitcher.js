@@ -36,25 +36,44 @@ function ButtonSwitcher({ labels = [], children }) {
       <div
         className={css`
           margin-bottom: 20px;
-          display: inline-block;
-          border: 2px solid ${colors.secondaryDarker};
+          display: flex;
+          justify-content: space-between;
           @media (max-width: ${breakpoints.small}) {
-            display: block;
+            flex-direction: column;
             max-width: 420px;
             margin: 0 auto 20px auto;
           }
         `}
       >
-        {labels.map((label, i) => (
-          <button
-            key={label}
-            className={buttonStyle}
-            onClick={() => setActiveIdx(i)}
-            disabled={i === activeIdx}
-          >
-            {label}
-          </button>
-        ))}
+        <div
+          className={css`
+            border: 2px solid ${colors.secondaryDarker};
+          `}
+        >
+          {labels.map((label, i) => (
+            <button
+              key={label}
+              className={buttonStyle}
+              onClick={() => setActiveIdx(i)}
+              disabled={i === activeIdx}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <a
+          href="Adam_Risberg_Resume.pdf"
+          target="_blank"
+          className={css`
+            ${buttonStyle}
+            border: 2px solid ${colors.secondaryDarker};
+            @media (max-width: ${breakpoints.small}) {
+              border-top: none;
+            }
+          `}
+        >
+          Download Resume
+        </a>
       </div>
       {children[activeIdx]}
     </React.Fragment>

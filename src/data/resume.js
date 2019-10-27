@@ -42,15 +42,6 @@ const resumeWebProjects = [
       "An open source React and Express based shopping cart system. Similar to Magento, OpenCart, etc. (React, Express, MongoDB)"
   },
   {
-    title: "React Input Position",
-    link: {
-      label: "adamrisberg.github.io/react-input-position",
-      href: "https://adamrisberg.github.io/react-input-position"
-    },
-    description:
-      "An open source React component that decorates it's children with mouse/touch position tracking and a status toggle fired by click/gesture events. (React)"
-  },
-  {
     title: "React Image Magnifiers",
     link: {
       label: "adamrisberg.github.io/react-image-magnifiers",
@@ -58,6 +49,15 @@ const resumeWebProjects = [
     },
     description:
       "An open source collection of responsive, image magnifying React components with mouse and touch interactions. (React)"
+  },
+  {
+    title: "React Input Position",
+    link: {
+      label: "adamrisberg.github.io/react-input-position",
+      href: "https://adamrisberg.github.io/react-input-position"
+    },
+    description:
+      "An open source React component that decorates it's children with mouse/touch position tracking and a status toggle fired by click/gesture events. (React)"
   }
 ];
 
@@ -130,7 +130,7 @@ const resumeSkills = [
   },
   {
     title: "Other",
-    description: "Jest, C#, WPF"
+    description: "Jest, Enzyme, C#, WPF"
   }
 ];
 
@@ -155,7 +155,7 @@ const resumeTools = [
 
 export default {
   description:
-    "Full-stack Web Developer, specializing in React and Node based web apps with a background in windows software development. A hard worker who is always excited to learn and face new challenges.",
+    "Full-stack Web Developer, currently specializing in React and Node based web apps with a background in windows software development. A hard worker who is always excited to learn and face new challenges.",
   mainSections: [
     {
       title: "WORK HISTORY",
