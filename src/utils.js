@@ -23,22 +23,16 @@ export function useInView(ref, offset) {
 
 export function useModalNav() {
   const [navOpen, setNavOpen] = React.useState(false);
-  const scrollBarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-
-  const scrollY = window.scrollY || window.pageYOffset;
+  const bodyRef = React.useRef(document.querySelector("body"));
+  const scrollBarWidth = window.outerWidth - window.innerWidth;
 
   React.useEffect(() => {
     if (navOpen) {
-      document.body.style.top = `-${scrollY || 0}px`;
-      document.body.style.position = "fixed";
-      document.body.style.paddingRight = `${scrollBarWidth}px`;
+      bodyRef.current.style.overflow = "hidden";
+      bodyRef.current.style.paddingRight = `${scrollBarWidth}px`;
     } else {
-      document.body.style.position = "static";
-      document.body.style.top = "";
-      document.body.style.paddingRight = "0px";
-
-      window.scrollTo(0, scrollY || 0);
+      bodyRef.current.style.overflow = "auto";
+      bodyRef.current.style.paddingRight = "0";
     }
   }, [navOpen]);
 
