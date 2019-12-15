@@ -23,16 +23,16 @@ export function useInView(ref, offset) {
 
 export function useModalNav() {
   const [navOpen, setNavOpen] = React.useState(false);
-  const bodyRef = React.useRef(document.querySelector("body"));
-  const scrollBarWidth = window.outerWidth - window.innerWidth;
+  const scrollBarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
 
   React.useEffect(() => {
     if (navOpen) {
-      bodyRef.current.style.overflow = "hidden";
-      bodyRef.current.style.paddingRight = `${scrollBarWidth}px`;
+      document.body.style.position = "fixed";
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
     } else {
-      bodyRef.current.style.overflow = "auto";
-      bodyRef.current.style.paddingRight = "0";
+      document.body.style.position = "static";
+      document.body.style.paddingRight = "0px";
     }
   }, [navOpen]);
 
@@ -68,9 +68,12 @@ export function useBoolDelay(bool, trueDelay, falseDelay) {
 export function handleLinkClick(ref, cb) {
   return e => {
     e.preventDefault();
-    const targetY = ref.current.getBoundingClientRect().top;
-    const scrollY = window.scrollY || window.pageYOffset;
-    window.scrollTo({ top: targetY + scrollY, behavior: "smooth" });
     cb && cb();
+
+    setTimeout(() => {
+      const targetY = ref.current.getBoundingClientRect().top;
+      const scrollY = window.scrollY || window.pageYOffset;
+      window.scrollTo({ top: targetY + scrollY, behavior: "smooth" });
+    }, 100);
   };
 }
