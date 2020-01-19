@@ -16,30 +16,6 @@ export const webProjects = [
     ]
   },
   {
-    title: "Only Music Folders Store",
-    type: "Only Music Folders",
-    tech: "Opencart | PHP | MYSQL",
-    image: "images/OnlyMusicFolders.jpg",
-    links: [
-      {
-        title: "Visit Site",
-        href: "https://www.onlymusicfolders.com"
-      }
-    ]
-  },
-  {
-    title: "Deer River Folio Website",
-    type: "Deer River Folio Co., Inc.",
-    tech: "React | Static Rendering",
-    image: "images/DeerRiverFolio.jpg",
-    links: [
-      {
-        title: "Visit Site",
-        href: "https://www.deerriverfolio.com"
-      }
-    ]
-  },
-  {
     title: "REACT-IMAGE-MAGNIFIERS",
     type: "React Component | Open Source",
     tech: "React",
@@ -68,6 +44,30 @@ export const webProjects = [
       {
         title: "Github",
         href: "https://github.com/adamrisberg/react-input-position"
+      }
+    ]
+  },
+  {
+    title: "Only Music Folders Store",
+    type: "Only Music Folders",
+    tech: "Opencart | PHP | MYSQL",
+    image: "images/OnlyMusicFolders.jpg",
+    links: [
+      {
+        title: "Visit Site",
+        href: "https://www.onlymusicfolders.com"
+      }
+    ]
+  },
+  {
+    title: "Deer River Folio Website",
+    type: "Deer River Folio Co., Inc.",
+    tech: "React | Static Rendering",
+    image: "images/DeerRiverFolio.jpg",
+    links: [
+      {
+        title: "Visit Site",
+        href: "https://www.deerriverfolio.com"
       }
     ]
   },

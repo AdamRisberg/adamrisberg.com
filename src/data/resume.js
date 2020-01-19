@@ -15,15 +15,6 @@ const resumeWorkHistory = [
 
 const resumeWebProjects = [
   {
-    title: "Only Music Folders Online Store",
-    link: {
-      label: "www.onlymusicfolders.com",
-      href: "https://www.onlymusicfolders.com"
-    },
-    description:
-      "Installed, configured, and customized OpenCart. Wrote extensions and tweaked source code to handle product option requirements, fit their workflow, and allow integration with the company's business software. (OpenCart, PHP, MYSQL)"
-  },
-  {
     title: "React Express Cart",
     link: {
       label: "www.cart.adamrisberg.com",
@@ -31,15 +22,6 @@ const resumeWebProjects = [
     },
     description:
       "An open source React and Express based shopping cart system. Similar to Magento, OpenCart, etc. (React, Express, MongoDB)"
-  },
-  {
-    title: "Deer River Folio Website",
-    link: {
-      label: "www.deerriverfolio.com",
-      href: "https://www.deerriverfolio.com"
-    },
-    description:
-      "Redesign of an old site to make it mobile friendly with improved look, user experience, and maintainability. (React & Static Rendering)"
   },
   {
     title: "React Image Magnifiers",
@@ -58,6 +40,24 @@ const resumeWebProjects = [
     },
     description:
       "An open source React component that decorates it's children with mouse/touch position tracking and a status toggle fired by click/gesture events. (React)"
+  },
+  {
+    title: "Only Music Folders Online Store",
+    link: {
+      label: "www.onlymusicfolders.com",
+      href: "https://www.onlymusicfolders.com"
+    },
+    description:
+      "Installed, configured, and customized OpenCart. Wrote extensions and tweaked source code to handle product option requirements, fit their workflow, and allow integration with the company's business software. (OpenCart, PHP, MYSQL)"
+  },
+  {
+    title: "Deer River Folio Website",
+    link: {
+      label: "www.deerriverfolio.com",
+      href: "https://www.deerriverfolio.com"
+    },
+    description:
+      "Redesign of an old site to make it mobile friendly with improved look, user experience, and maintainability. (React & Static Rendering)"
   }
 ];
 
@@ -76,13 +76,9 @@ const resumeWindowsProjects = [
 
 const resumeEducation = [
   {
-    title: "College",
+    title: "",
     description:
-      "AA - Digital Animation Production - University of Advancing Technologies"
-  },
-  {
-    title: "Highschool",
-    description: "Deer River High School"
+      "A.A. Digital Animation Production - University of Advancing Technologies"
   }
 ];
 
@@ -168,10 +164,6 @@ export default {
     {
       title: "WINDOWS PROJECTS",
       skills: resumeWindowsProjects
-    },
-    {
-      title: "EDUCATION",
-      skills: resumeEducation
     }
   ],
   sideBarSections: [
@@ -186,6 +178,10 @@ export default {
     {
       title: "TOOLS",
       skills: resumeTools
+    },
+    {
+      title: "EDUCATION",
+      skills: resumeEducation
     }
   ]
 };
