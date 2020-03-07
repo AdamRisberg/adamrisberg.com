@@ -70,7 +70,7 @@ function useAxiosPost(url, body) {
         .then(_ => dispatch({ type: "success" }))
         .catch(_ => dispatch({ type: "failed" }));
     }
-  }, [body]);
+  }, [body, url]);
 
   return state;
 }

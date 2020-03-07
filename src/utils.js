@@ -16,7 +16,7 @@ export function useInView(ref, offset) {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [ref, offset]);
 
   return inView;
 }
@@ -34,7 +34,7 @@ export function useModalNav() {
       document.body.style.position = "static";
       document.body.style.paddingRight = "0px";
     }
-  }, [navOpen]);
+  }, [navOpen, scrollBarWidth]);
 
   return [navOpen, setNavOpen, navOpen ? scrollBarWidth : 0];
 }
@@ -60,7 +60,7 @@ export function useBoolDelay(bool, trueDelay, falseDelay) {
       },
       bool ? trueDelay : falseDelay
     );
-  }, [bool]);
+  }, [bool, trueDelay, falseDelay]);
 
   return delayedBool;
 }
