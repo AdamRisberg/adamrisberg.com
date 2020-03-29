@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 
-import { ListCard } from "./aboutCards";
+import ListCard from "./ListCard";
 import Section from "./Section";
 import SectionTitle from "./SectionTitle";
 
